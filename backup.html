@@ -1,110 +1,186 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aldian - Under Construction</title>
+    <title>Under Construction - Aldian</title>
+    <!-- Menggunakan font modern yang mirip dengan template Anda -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Pengaturan Tema Gelap (Hitam Elegan) */
+        /* Pengaturan Dasar */
         body {
             margin: 0;
             padding: 0;
-            background-color: #111111;
-            color: #f1f1f1;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 80px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #f0f0f0; /* Garis abu-abu tipis di bawah menu */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #000000;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #000000;
+        }
+
+        .dark-mode-toggle {
+            font-size: 20px;
+            cursor: pointer;
+            color: #111;
+        }
+
+        /* KONTEN UNDER CONSTRUCTION */
+        main {
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             text-align: center;
+            padding: 20px;
         }
 
-        .container {
-            max-width: 650px;
-            padding: 30px;
+        .sub-heading {
+            color: #3b82f6; /* Warna biru template */
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 3.5rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            color: #ffffff;
-            text-transform: uppercase;
+            font-size: 64px;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            letter-spacing: -2px;
+            color: #111111;
         }
 
         p {
-            font-size: 1.15rem;
-            color: #a0a0a0;
+            font-size: 18px;
             line-height: 1.7;
+            color: #666666;
+            max-width: 600px;
             margin-bottom: 40px;
         }
 
-        /* Efek Animasi Loading Bar */
-        .loader {
-            width: 100%;
-            height: 3px;
-            background-color: #333333;
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 35px;
+        /* TOMBOL (Sama seperti template) */
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
 
-        .loader::after {
-            content: '';
-            display: block;
-            width: 30%;
-            height: 100%;
-            background-color: #fb7185; /* Warna aksen merah pastel */
-            position: absolute;
-            left: 0;
-            animation: loading 2s infinite ease-in-out;
-        }
-
-        @keyframes loading {
-            0% { left: -30%; }
-            100% { left: 100%; }
-        }
-
-        /* Bagian Kontak */
-        .contact {
-            font-size: 1rem;
-            color: #777777;
-            padding-top: 20px;
-            border-top: 1px solid #333333;
-        }
-
-        .contact a {
-            color: #fb7185;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .contact a:hover {
+        .btn-primary {
+            background-color: #1a1a1a;
             color: #ffffff;
-            text-decoration: underline;
+            padding: 16px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #333333;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #111111;
+            padding: 16px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid #eaeaea;
+            transition: border-color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #cccccc;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 20px; }
+            h1 { font-size: 42px; }
+            .button-group { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Stay Tuned</h1>
-        
-        <div class="loader"></div>
-        
+    <!-- BAGIAN HEADER NAVIGASI -->
+    <header>
+        <a href="index.html" class="logo">AL.</a>
+        <nav>
+            <ul>
+                <!-- Link di bawah ini akan mengarahkan visitor kembali ke halaman Home -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Ikon Bulan Sabit -->
+        <div class="dark-mode-toggle">☾</div>
+    </header>
+
+    <!-- BAGIAN KONTEN UTAMA -->
+    <main>
+        <div class="sub-heading">SYSTEM UPDATE | UNDER CONSTRUCTION</div>
+        <h1>Coming Soon.</h1>
         <p>
-            Halo, portofolio <strong>Aldian</strong> saat ini sedang dalam tahap pengembangan dan penyempurnaan sistem. 
-            Saya sedang menyiapkan ruang digital yang menampilkan rekam jejak pelaporan teknis operasional dan proyek terbaru saya.
+            Halaman ini sedang dalam tahap pengembangan. Saya sedang menyiapkan dan menyusun rekam jejak terkait pelaporan teknis operasional sumur dan dokumentasi proyek terbaru saya.
         </p>
         
-        <div class="contact">
-            Untuk keperluan profesional yang mendesak, silakan hubungi saya melalui <br><br>
-            <a href="mailto:aldiansgb@gmail.com">aldiansgb@gmail.com</a>
+        <div class="button-group">
+            <a href="index.html" class="btn-primary">Back to Home &rarr;</a>
+            <a href="mailto:aldiansgb@gmail.com" class="btn-secondary">Let's Talk</a>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
