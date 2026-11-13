@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALDIAN // Pertamina Hulu Mahakam Pixel Street Portfolio & Online CV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans + Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        pixel: ['"Press Start 2P"', 'monospace'],
+                    },
+                    colors: {
+                        ink: '#2b2320',
+                        cream: '#fdf8f2',
+                        wallCream: '#f3e7d3',
+                        terracotta: '#d96b52',
+                        warmOrange: '#f29f4b',
+                        phmOrange: '#f97316',
+                        phmRed: '#e63946',
+                        phmBlue: '#1d63b8',
+                        phmGreen: '#52b788',
+                        mintTeal: '#52b788',
+                        softYellow: '#f6d365',
+                        pastelBlue: '#5fa8d3',
+                        busGreen: '#52b788',
+                        skyPeach: '#fbe8d3',
+                        skyMint: '#d8edea',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Cozy Pertamina Hulu Mahakam Vector-Pixel Illustration Aesthetic */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2b2320;
+            background: linear-gradient(180deg, #fbe8d3 0%, #f5e2d8 32%, #e2eeec 68%, #f8f3eb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Crisp Dark Charcoal Outlines & Smooth Rounded Cards */
+        .cozy-card {
+            background-color: #fdf8f2;
+            border: 2.5px solid #2b2320;
+            border-radius: 18px;
+            box-shadow: 0 5px 0 #2b2320;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .cozy-card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 #2b2320;
+        }
+
+        .cozy-pill {
+            border: 2px solid #2b2320;
+            border-radius: 9999px;
+            box-shadow: 0 3px 0 #2b2320;
+            transition: all 0.15s ease;
+            min-height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cozy-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 #2b2320;
+        }
+
+        .cozy-pill:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 0 #2b2320;
+        }
+
+        .cozy-btn {
+            border: 2.5px solid #2b2320;
+            border-radius: 14px;
+            box-shadow: 0 4px 0 #2b2320;
+            transition: all 0.14s ease;
+            cursor: pointer;
+            min-height: 44px;
+        }
+
+        .cozy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #2b2320;
+        }
+
+        .cozy-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #2b2320;
+        }
+
+        .tab-active {
+            background-color: #1d63b8 !important;
+            color: #ffffff !important;
+        }
+
+        /* Hide horizontal scrollbar on mobile nav pills */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animations for PHM Field Street Scene */
+        @keyframes busDrive {
+            0% { transform: translateX(920px); }
+            100% { transform: translateX(-220px); }
+        }
+        .animate-bus {
+            animation: busDrive 20s linear infinite;
+            transform-box: view-box;
+        }
+        .animate-bus:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes chibiBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+        .animate-chibi {
+            animation: chibiBounce 2.2s ease-in-out infinite;
+            transform-box: fill-box;
+            transform-origin: center bottom;
+        }
+
+        @keyframes handWave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-14deg); }
+        }
+        .animate-wave-arm {
+            animation: handWave 1.4s ease-in-out infinite;
+            transform-origin: 48px 54px;
+        }
+
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0) scale(0.95); }
+            100% { opacity: 0; transform: translateY(-38px) scale(1.12); }
+        }
+        .hp-pop {
+            animation: floatUp 1.15s ease-out forwards;
+            pointer-events: none;
+        }
+
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbe8d3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
+            border: 2px solid #2b2320;
+            border-radius: 999px;
+        }
+
+        /* PHM FIELD RUN — original oil & gas endless runner mini-game */
+        .field-run-shell { background: #fffaf2; border: 2.5px solid #2b2320; border-radius: 20px; box-shadow: 0 5px 0 #2b2320; overflow: hidden; }
+        .field-run-top { background: #2b2320; color: #fffaf2; }
+        .field-run-canvas-wrap { position: relative; background: #f8e8d8; overflow: hidden; touch-action: manipulation; }
+        #field-run-canvas { width: 100%; height: auto; display: block; image-rendering: pixelated; image-rendering: crisp-edges; cursor: pointer; }
+        .field-run-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 14px; background: rgba(43,35,32,.18); }
+        .field-run-overlay-card { max-width: 370px; width: 100%; background: rgba(253,248,242,.97); border: 2.5px solid #2b2320; border-radius: 16px; box-shadow: 0 5px 0 #2b2320; padding: 18px; text-align: center; }
+        .field-run-overlay.hidden { display: none; }
+        .field-run-press { user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+        .field-run-hud-value { font-family: 'Press Start 2P', monospace; font-size: 11px; }
+        .field-run-key { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 28px; padding: 0 8px; color: #2b2320; background: #fffaf2; border: 2px solid #2b2320; border-bottom-width: 4px; border-radius: 7px; font-weight: 900; }
+        @media (max-width: 640px) {
+            .field-run-hud-value { font-size: 9px; }
+            /* On phones the mission panel becomes a normal flow block above the canvas.
+               This gives the full message and START button their own height instead of
+               squeezing them into the short 900:280 canvas area. */
+            .field-run-canvas-wrap { display: flex; flex-direction: column; overflow: visible; }
+            .field-run-overlay {
+                position: relative;
+                inset: auto;
+                order: 0;
+                width: 100%;
+                flex: 0 0 auto;
+                padding: 12px;
+                background: rgba(43,35,32,.10);
+            }
+            #field-run-canvas { order: 1; flex: 0 0 auto; }
+            .field-run-overlay-card {
+                width: 100%;
+                max-width: none;
+                padding: 16px 14px;
+                border-radius: 14px;
+                box-shadow: 0 4px 0 #2b2320;
+            }
+            .field-run-overlay h3 { font-size: clamp(18px, 5vw, 22px); line-height: 1.25; }
+            .field-run-overlay p { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+            .field-run-overlay button { min-height: 44px; width: min(100%, 260px); padding: 11px 16px; }
+            #field-run-sound, #field-run-jump { min-height: 44px; }
+        }
+        @media (prefers-reduced-motion: reduce) { .field-run-overlay-card { transition: none !important; } }
+
+    </style>
+</head>
+<body class="antialiased selection:bg-softYellow selection:text-ink">
+
+    <!-- FLOATING TOP NAVIGATION PILL BAR (MOBILE FRIENDLY) -->
+    <header class="sticky top-2.5 sm:top-3 z-50 px-3 sm:px-4">
+        <div class="max-w-5xl mx-auto bg-cream/95 backdrop-blur-md border-[2.5px] border-ink rounded-2xl sm:rounded-full px-3 sm:px-4 py-2 shadow-[0_4px_0_#2b2320] flex flex-col sm:flex-row items-center justify-between gap-2">
+            <!-- Brand Badge with Pertamina Color Accent -->
+            <div class="w-full sm:w-auto flex items-center justify-between">
+                <a href="#top" class="flex items-center gap-2.5 group">
+                    <span class="w-9 h-9 rounded-full bg-phmOrange border-2 border-ink flex items-center justify-center text-white font-pixel text-[9px] shadow-[0_2px_0_#2b2320] group-hover:rotate-12 transition shrink-0">
+                        PHM
+                    </span>
+                    <div class="leading-tight">
+                        <span class="font-extrabold text-sm tracking-tight text-ink block">ALDIAN.ID</span>
+                        <span class="font-pixel text-[8px] text-phmBlue block">CLOSE-OUT ENGINEER</span>
+                    </div>
+                </a>
+                <!-- Mobile Quick Contact Pill -->
+                <a href="#kontak" class="sm:hidden cozy-pill bg-phmRed text-white px-3.5 py-1 text-xs font-extrabold">
+                    Kontak
+                </a>
+            </div>
+
+            <!-- Scrollable Mobile Navigation Links -->
+            <nav class="w-full sm:w-auto flex items-center gap-1.5 sm:gap-2 text-xs font-bold overflow-x-auto no-scrollbar pb-0.5 sm:pb-0">
+                <a href="#profil" class="shrink-0 px-3 py-2 rounded-full hover:bg-softYellow/60 border border-transparent hover:border-ink transition">Profil</a>
+                <a href="#cv" class="shrink-0 px-3 py-2 rounded-full hover:bg-phmOrange/20 border border-transparent hover:border-ink transition">Riwayat Kerja</a>
+                <a href="#portofolio" class="shrink-0 px-3 py-2 rounded-full hover:bg-pastelBlue/30 border border-transparent hover:border-ink transition">Portofolio</a>
+                <a href="#skills" class="shrink-0 px-3 py-2 rounded-full hover:bg-phmGreen/30 border border-transparent hover:border-ink transition">Skill</a>
+                <a href="#kontak" class="hidden sm:inline-flex shrink-0 cozy-pill bg-phmRed text-white px-4 py-1.5 text-xs font-extrabold">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION: PERTAMINA HULU MAHAKAM OPERATION HUB PIXEL STREET SCENE -->
+    <section id="top" class="max-w-5xl mx-auto px-3 sm:px-4 pt-4 sm:pt-6 pb-4">
+        <div class="cozy-card overflow-hidden relative bg-gradient-to-b from-[#fbe6d4] via-[#f7e7db] to-[#d9ece9]">
+            
+            <!-- Top Mini HUD Bar inside the Facility Frame -->
+            <div class="flex flex-wrap items-center justify-between gap-2 px-3 sm:px-4 py-2.5 bg-cream/95 border-b-[2.5px] border-ink text-xs">
+                <div class="flex items-center gap-2">
+                    <!-- Pertamina Tri-Color Dots -->
+                    <span class="flex items-center gap-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-phmBlue border border-ink"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-phmGreen border border-ink"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-phmRed border border-ink"></span>
+                    </span>
+                    <span class="font-extrabold text-ink text-[11px] sm:text-xs">PT PERTAMINA HULU MAHAKAM • BALIKPAPAN HUB</span>
+                </div>
+                <div class="flex items-center gap-1.5 sm:gap-2 font-pixel text-[8px] sm:text-[9px]">
+                    <span id="hp-badge" class="bg-phmGreen/25 border-2 border-ink px-2.5 py-1 rounded-full text-ink">HSE 100%</span>
+                    <span class="bg-softYellow border-2 border-ink px-2.5 py-1 rounded-full text-ink">CUM LAUDE 3.63</span>
+                </div>
+            </div>
+
+            <!-- ILLUSTRATED PERTAMINA HULU MAHAKAM FACILITY & ALDIAN CHIBI SPRITE -->
+            <div class="relative w-full h-[290px] sm:h-[370px] md:h-[400px] select-none overflow-hidden cursor-pointer" id="street-canvas" onclick="triggerSafetyBoost(event)">
+                <!-- Interactive Floating Popups Container -->
+                <div id="popup-layer" class="absolute inset-0 z-30 pointer-events-none"></div>
+
+                <!-- SVG Pertamina Hulu Mahakam Operation Hub Diorama -->
+                <svg viewBox="0 0 900 380" preserveAspectRatio="xMidYMax slice" class="w-full h-full block">
+                    <defs>
+                        <linearGradient id="phmSky" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#fbe6d2"/>
+                            <stop offset="65%" stop-color="#f5e6e0"/>
+                            <stop offset="100%" stop-color="#d2e8e4"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="900" height="380" fill="url(#phmSky)"/>
+
+                    <!-- Fluffy Pastel Clouds -->
+                    <g fill="#ffffff" opacity="0.88">
+                        <circle cx="315" cy="95" r="50"/>
+                        <circle cx="368" cy="105" r="40"/>
+                        <circle cx="268" cy="112" r="35"/>
+                        <circle cx="660" cy="82" r="44"/>
+                        <circle cx="705" cy="94" r="34"/>
+                    </g>
+
+                    <!-- Balikpapan Green Hill on Left -->
+                    <path d="M-20 310 L-20 120 Q38 75 98 115 Q152 150 212 162 L212 310 Z" fill="#76c893" stroke="#2b2320" stroke-width="3"/>
+                    <path d="M-10 128 Q38 88 92 123" fill="none" stroke="#99e2b4" stroke-width="5" stroke-linecap="round"/>
+
+                    <!-- Distant Mahakam Swamp/Offshore Rig Silhouette & Storage Tanks -->
+                    <g stroke="#2b2320" stroke-width="2" opacity="0.85">
+                        <!-- Storage Tanks -->
+                        <rect x="335" y="136" width="54" height="58" rx="6" fill="#e2ece9"/>
+                        <path d="M335 144 Q362 132 389 144" fill="#cbd5e1"/>
+                        <rect x="396" y="146" width="46" height="48" rx="6" fill="#e2ece9"/>
+                        <!-- Distant Drilling Rig Derrick -->
+                        <polygon points="485,84 470,194 500,194" fill="none" stroke="#64748b" stroke-width="2.5"/>
+                        <line x1="477" y1="120" x2="493" y2="120" stroke="#64748b"/>
+                        <line x1="474" y1="154" x2="496" y2="154" stroke="#64748b"/>
+                        <rect x="462" y="182" width="46" height="12" rx="2" fill="#94a3b8"/>
+                    </g>
+
+                    <!-- LEFT BUILDING: Terracotta Brick Well Engineering Office -->
+                    <g stroke="#2b2320" stroke-width="3">
+                        <!-- Satellite Dish & AC -->
+                        <path d="M58 134 Q48 120 64 110 Z" fill="#b8c0cc"/>
+                        <line x1="61" y1="128" x2="61" y2="148"/>
+                        <rect x="92" y="120" width="56" height="28" rx="4" fill="#9fb1bc"/>
+                        <circle cx="112" cy="134" r="9" fill="#3d405b"/>
+                        <line x1="128" y1="126" x2="142" y2="126" stroke-width="2"/>
+                        <line x1="128" y1="132" x2="142" y2="132" stroke-width="2"/>
+                        <line x1="128" y1="138" x2="142" y2="138" stroke-width="2"/>
+
+                        <!-- Roof Trim -->
+                        <rect x="16" y="148" width="194" height="14" rx="3" fill="#e06d53"/>
+                        <!-- Brick Wall -->
+                        <rect x="22" y="162" width="182" height="168" fill="#d96b52"/>
+                        <!-- Cream Plaster Stucco Patches -->
+                        <path d="M22 188 Q66 184 76 208 Q83 230 46 238 L22 238 Z" fill="#f3e7d3" stroke="none"/>
+                        <path d="M132 258 Q172 253 182 282 L182 330 L118 330 Z" fill="#f3e7d3" stroke="none"/>
+                        <!-- Window -->
+                        <rect x="42" y="191" width="54" height="44" rx="4" fill="#f29f4b"/>
+                        <rect x="48" y="197" width="42" height="32" fill="#89b0d8"/>
+                        <line x1="69" y1="197" x2="69" y2="229"/>
+                        <!-- Awning -->
+                        <path d="M18 248 L114 248 L120 262 L14 262 Z" fill="#1d63b8"/>
+                        <!-- Door -->
+                        <rect x="46" y="274" width="40" height="56" rx="4" fill="#f6d365"/>
+                        <rect x="53" y="282" width="26" height="18" rx="2" fill="#fdf8f2"/>
+                        <circle cx="80" cy="306" r="2.5" fill="#2b2320"/>
+                        <!-- Wall AC Units -->
+                        <rect x="170" y="176" width="26" height="36" rx="3" fill="#dce4ec"/>
+                        <circle cx="183" cy="192" r="7" fill="#4a5568"/>
+                        <rect x="170" y="242" width="26" height="36" rx="3" fill="#dce4ec"/>
+                        <circle cx="183" cy="258" r="7" fill="#4a5568"/>
+                    </g>
+
+                    <!-- CENTER MAIN BUILDING: PERTAMINA HULU MAHAKAM OPERATION HUB -->
+                    <g stroke="#2b2320" stroke-width="3">
+                        <!-- Pertamina Tri-Color Roof Fascia -->
+                        <rect x="204" y="114" width="452" height="18" rx="4" fill="#1d63b8"/>
+                        <rect x="490" y="117" width="50" height="12" rx="2" fill="#52b788" stroke="none"/>
+                        <rect x="544" y="117" width="50" height="12" rx="2" fill="#e63946" stroke="none"/>
+                        <rect x="598" y="117" width="50" height="12" rx="2" fill="#f97316" stroke="none"/>
+
+                        <!-- Cream Tile Wall -->
+                        <rect x="210" y="132" width="440" height="198" fill="#f3e7d3"/>
+                        <!-- Subtle Tile Grid Lines -->
+                        <g stroke="#dfd0b8" stroke-width="1.5">
+                            <line x1="210" y1="166" x2="650" y2="166"/>
+                            <line x1="210" y1="200" x2="650" y2="200"/>
+                            <line x1="275" y1="132" x2="275" y2="232"/>
+                            <line x1="345" y1="132" x2="345" y2="232"/>
+                            <line x1="415" y1="132" x2="415" y2="232"/>
+                            <line x1="485" y1="132" x2="485" y2="232"/>
+                        </g>
+
+                        <!-- Second Floor Office Windows -->
+                        <rect x="234" y="156" width="84" height="44" rx="4" fill="#f29f4b"/>
+                        <rect x="240" y="162" width="34" height="32" fill="#89b0d8"/>
+                        <rect x="278" y="162" width="34" height="32" fill="#89b0d8"/>
+
+                        <rect x="334" y="156" width="84" height="44" rx="4" fill="#f29f4b"/>
+                        <rect x="340" y="162" width="34" height="32" fill="#89b0d8"/>
+                        <rect x="378" y="162" width="34" height="32" fill="#89b0d8"/>
+
+                        <!-- Vertical Signboard: PHM MAHAKAM -->
+                        <rect x="572" y="142" width="56" height="114" rx="10" fill="#fdf8f2"/>
+                        <rect x="578" y="148" width="44" height="102" rx="6" fill="#e8f3fb" stroke="#1d63b8" stroke-width="2"/>
+                        <text x="600" y="167" text-anchor="middle" fill="#e63946" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="12">P</text>
+                        <text x="600" y="181" text-anchor="middle" fill="#1d63b8" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="12">H</text>
+                        <text x="600" y="195" text-anchor="middle" fill="#52b788" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="12">M</text>
+                        <line x1="586" y1="203" x2="614" y2="203" stroke="#2b2320" stroke-width="1.5"/>
+                        <text x="600" y="218" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="9">HUB</text>
+                        <text x="600" y="231" text-anchor="middle" fill="#f97316" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5">BPN</text>
+                        <text x="600" y="243" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5">ID</text>
+
+                        <!-- Main Horizontal Fascia Banner: PERTAMINA HULU MAHAKAM -->
+                        <rect x="208" y="220" width="344" height="28" rx="5" fill="#fdf8f2"/>
+                        <!-- Pertamina Red, Blue, Green Stripes -->
+                        <rect x="213" y="224" width="14" height="20" rx="2" fill="#1d63b8" stroke="none"/>
+                        <rect x="229" y="224" width="14" height="20" rx="2" fill="#52b788" stroke="none"/>
+                        <rect x="245" y="224" width="14" height="20" rx="2" fill="#e63946" stroke="none"/>
+                        <text x="404" y="239" text-anchor="middle" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="13.5" fill="#2b2320">
+                            PERTAMINA HULU MAHAKAM
+                        </text>
+
+                        <!-- Ground Floor Lobby Glass & Operation Room -->
+                        <rect x="218" y="248" width="324" height="82" fill="#e6f2f5"/>
+                        <line x1="298" y1="248" x2="298" y2="330"/>
+                        <line x1="380" y1="248" x2="380" y2="330"/>
+                        <line x1="462" y1="248" x2="462" y2="330"/>
+                        <!-- Interior Monitoring Screens & Shelves -->
+                        <rect x="230" y="264" width="54" height="26" rx="3" fill="#1d63b8" stroke-width="2"/>
+                        <polyline points="236,280 246,272 256,278 268,268 278,274" fill="none" stroke="#52b788" stroke-width="2"/>
+
+                        <!-- Orange Safety Cones in Front of Hub -->
+                        <g stroke="#2b2320" stroke-width="2">
+                            <polygon points="216,330 223,308 229,308 236,330" fill="#f97316"/>
+                            <line x1="220" y1="319" x2="232" y2="319" stroke="#ffffff" stroke-width="2.5"/>
+                            <polygon points="244,330 251,308 257,308 264,330" fill="#f97316"/>
+                            <line x1="248" y1="319" x2="260" y2="319" stroke="#ffffff" stroke-width="2.5"/>
+                        </g>
+
+                        <!-- HSE / SAFETY FIRST Gate Entrance on Right -->
+                        <rect x="556" y="264" width="84" height="22" rx="4" fill="#f6d365"/>
+                        <text x="598" y="278" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="9.5">HSE GATE</text>
+                        <rect x="562" y="286" width="72" height="44" fill="#4a5568"/>
+                        <g stroke="#2b2320" stroke-width="2" fill="#94a3b8">
+                            <rect x="566" y="320" width="64" height="10"/>
+                            <rect x="570" y="310" width="56" height="10"/>
+                            <rect x="574" y="300" width="48" height="10"/>
+                        </g>
+                    </g>
+
+                    <!-- RIGHT BUILDING: Industrial Substation & Red/Orange Chillers -->
+                    <g stroke="#2b2320" stroke-width="3">
+                        <rect x="712" y="68" width="14" height="64" rx="4" fill="#e9ecef"/>
+                        <rect x="674" y="86" width="90" height="8" rx="3" fill="#ced4da"/>
+                        <line x1="764" y1="90" x2="900" y2="98" stroke="#2b2320" stroke-width="2.5"/>
+
+                        <rect x="650" y="132" width="160" height="198" fill="#c9c2ba"/>
+                        <!-- Industrial Piping & AC Units -->
+                        <rect x="692" y="168" width="68" height="42" rx="5" fill="#e06d53"/>
+                        <circle cx="716" cy="189" r="13" fill="#2b2320"/>
+                        <circle cx="716" cy="189" r="4" fill="#fdf8f2"/>
+
+                        <rect x="692" y="252" width="68" height="42" rx="5" fill="#f97316"/>
+                        <circle cx="716" cy="273" r="13" fill="#2b2320"/>
+                        <circle cx="716" cy="273" r="4" fill="#fdf8f2"/>
+                    </g>
+
+                    <!-- ALDIAN CHIBI POSITIONING WRAPPER: place the character on the sidewalk in front of the PHM main entrance -->
+                    <g id="aldian-position" transform="translate(382, 235)">
+                    <!-- Character animation is kept on an inner group so CSS transforms do not override its SVG position -->
+                    <g id="aldian-sprite" class="animate-chibi">
+                        <!-- Floating Safety/Work Speech Pill -->
+                        <g transform="translate(46, -12)">
+                            <rect x="0" y="0" width="76" height="22" rx="11" fill="#fdf8f2" stroke="#2b2320" stroke-width="2"/>
+                            <text x="38" y="14" text-anchor="middle" fill="#f97316" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="10">PPP &amp; COR ✓</text>
+                        </g>
+
+                        <!-- Ground Shadow -->
+                        <ellipse cx="32" cy="96" rx="22" ry="5" fill="#2b2320" opacity="0.25"/>
+
+                        <g stroke="#2b2320" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+                            <!-- Safety Boots -->
+                            <path d="M18 86 L29 86 L29 95 L15 95 Q15 89 18 86 Z" fill="#2b2320"/>
+                            <path d="M35 86 L46 86 L49 95 L35 95 Z" fill="#2b2320"/>
+
+                            <!-- Orange PHM Coverall Pants -->
+                            <rect x="19" y="68" width="11" height="19" rx="3" fill="#f97316"/>
+                            <rect x="34" y="68" width="11" height="19" rx="3" fill="#f97316"/>
+                            <!-- Silver/Yellow Reflective Leg Stripes -->
+                            <rect x="19" y="77" width="11" height="4" fill="#f6d365" stroke-width="1.5"/>
+                            <rect x="34" y="77" width="11" height="4" fill="#f6d365" stroke-width="1.5"/>
+
+                            <!-- Left Arm holding PPP/COR Clipboard -->
+                            <path d="M17 48 L9 62 L17 67 L22 54 Z" fill="#f97316"/>
+                            <!-- Technical Clipboard -->
+                            <rect x="4" y="54" width="15" height="19" rx="2" fill="#fdf8f2" stroke-width="2"/>
+                            <rect x="8" y="52" width="7" height="3" rx="1" fill="#1d63b8" stroke-width="1.5"/>
+                            <line x1="7" y1="60" x2="16" y2="60" stroke="#1d63b8" stroke-width="1.5"/>
+                            <line x1="7" y1="65" x2="14" y2="65" stroke="#52b788" stroke-width="1.5"/>
+
+                            <!-- Right Arm Waving Cheerfully -->
+                            <g class="animate-wave-arm">
+                                <path d="M46 48 L58 35 Q62 32 64 37 L51 54 Z" fill="#f97316"/>
+                                <circle cx="60" cy="35" r="4" fill="#fcd5ce"/>
+                            </g>
+
+                            <!-- Orange PHM Coverall Torso (Wearpack) -->
+                            <path d="M17 44 Q32 41 47 44 L48 70 L16 70 Z" fill="#f97316"/>
+                            <!-- Zipper Line -->
+                            <line x1="32" y1="44" x2="32" y2="70" stroke-width="2"/>
+                            <!-- High-Vis Reflective Chest & Shoulder Stripes -->
+                            <rect x="17" y="52" width="30" height="4.5" fill="#f6d365" stroke-width="1.5"/>
+                            <rect x="22" y="43" width="4" height="10" fill="#f6d365" stroke-width="1.5"/>
+                            <rect x="38" y="43" width="4" height="10" fill="#f6d365" stroke-width="1.5"/>
+                            <!-- Pertamina Patch & ID Lanyard -->
+                            <rect x="36" y="59" width="7" height="5" rx="1" fill="#1d63b8" stroke-width="1.2"/>
+                            <rect x="21" y="59" width="6" height="7" rx="1" fill="#ffffff" stroke-width="1.2"/>
+
+                            <!-- Chibi Head -->
+                            <circle cx="32" cy="27" r="14.5" fill="#fcd5ce"/>
+                            <!-- Neat Dark Hair peeking below helmet -->
+                            <path d="M18 25 Q19 20 24 22 Q32 20 40 22 Q45 20 46 25 L45 29 Q42 24 38 25 L26 25 Q22 24 19 29 Z" fill="#2b2320"/>
+                            <!-- Expressive Eyes & Friendly Smile -->
+                            <circle cx="27" cy="28" r="1.8" fill="#2b2320" stroke="none"/>
+                            <circle cx="37" cy="28" r="1.8" fill="#2b2320" stroke="none"/>
+                            <path d="M29 33 Q32 36 35 33" fill="none" stroke="#2b2320" stroke-width="2"/>
+                            <!-- Soft Blush -->
+                            <ellipse cx="23" cy="31" rx="2" ry="1" fill="#f28482" stroke="none"/>
+                            <ellipse cx="41" cy="31" rx="2" ry="1" fill="#f28482" stroke="none"/>
+
+                            <!-- White Safety Helmet (Hard Hat) with Pertamina Emblem -->
+                            <path d="M16 21 Q16 7 32 7 Q48 7 48 21 Z" fill="#ffffff"/>
+                            <!-- Helmet Brim -->
+                            <path d="M13 21 Q32 24 51 21 Q51 18 32 19 Q13 18 13 21 Z" fill="#f8fafc"/>
+                            <!-- Helmet Ridge -->
+                            <path d="M28 7 L36 7 L35 16 L29 16 Z" fill="#e2e8f0" stroke-width="1.5"/>
+                            <!-- Pertamina Tri-Color Badge on Helmet Front -->
+                            <rect x="29" y="12" width="2" height="4" fill="#1d63b8" stroke="none"/>
+                            <rect x="31" y="12" width="2" height="4" fill="#52b788" stroke="none"/>
+                            <rect x="33" y="12" width="2" height="4" fill="#e63946" stroke="none"/>
+                        </g>
+                    </g>
+                    </g>
+
+                    <!-- SIDEWALK & ASPHALT STREET -->
+                    <rect x="0" y="330" width="900" height="10" fill="#e9ecef" stroke="#2b2320" stroke-width="2.5"/>
+                    <rect x="0" y="340" width="900" height="40" fill="#4a5568" stroke="#2b2320" stroke-width="2.5"/>
+                    <!-- Dashed Road Lines -->
+                    <line x1="0" y1="360" x2="900" y2="360" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="26 20"/>
+
+                    <!-- PERTAMINA CREW SHUTTLE BUS (KT 7124 PHM)
+                         The horizontal animation stays on the outer group; the inner group
+                         fixes the bus height so the wheels sit on the asphalt (road ends at y=380). -->
+                    <g class="animate-bus">
+                      <g transform="translate(0, 283)">
+                        <g stroke="#2b2320" stroke-width="3">
+                            <!-- White Bus Body with Pertamina Livery -->
+                            <rect x="0" y="0" width="164" height="82" rx="14" fill="#ffffff"/>
+                            <!-- Pertamina Red-Blue-Green Livery Stripes -->
+                            <rect x="4" y="52" width="156" height="7" fill="#1d63b8" stroke="none"/>
+                            <rect x="4" y="59" width="156" height="5" fill="#52b788" stroke="none"/>
+                            <rect x="4" y="64" width="156" height="6" fill="#e63946" stroke="none"/>
+                            <!-- Re-outline bus body cleanly -->
+                            <rect x="0" y="0" width="164" height="82" rx="14" fill="none"/>
+
+                            <!-- Front Windshield -->
+                            <rect x="10" y="14" width="52" height="34" rx="6" fill="#d8edf2"/>
+                            <line x1="36" y1="14" x2="36" y2="48"/>
+                            <!-- Side Windows -->
+                            <rect x="70" y="14" width="36" height="34" rx="4" fill="#d8edf2"/>
+                            <rect x="114" y="14" width="38" height="34" rx="4" fill="#d8edf2"/>
+
+                            <!-- Headlights & License Plate (KT 7124) -->
+                            <circle cx="14" cy="72" r="3.5" fill="#f6d365"/>
+                            <circle cx="58" cy="72" r="3.5" fill="#f6d365"/>
+                            <rect x="23" y="69" width="26" height="9" rx="2" fill="#fdf8f2" stroke-width="2"/>
+                            <text x="36" y="76" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="6">KT 7124</text>
+
+                            <!-- Wheels -->
+                            <circle cx="34" cy="82" r="13" fill="#2b2320"/>
+                            <circle cx="34" cy="82" r="5" fill="#adb5bd"/>
+                            <circle cx="128" cy="82" r="13" fill="#2b2320"/>
+                            <circle cx="128" cy="82" r="5" fill="#adb5bd"/>
+                        </g>
+                      </g>
+                    </g>
+                </svg>
+
+                <!-- Interactive Hint Pill (Touch-friendly) -->
+                <button type="button" onclick="triggerSafetyBoost(event)" class="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 z-20 bg-cream/95 hover:bg-softYellow border-2 border-ink rounded-full px-3 py-1.5 text-[10px] sm:text-[11px] font-extrabold shadow-[0_3px_0_#2b2320] flex items-center gap-1.5 transition">
+                    <span>🦺</span> Tap karakter / gedung PHM!
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PHM FIELD RUN: MINI GAME INSPIRED BY CLASSIC SIDE-SCROLLING RUNNERS -->
+    <section id="field-run" class="max-w-5xl mx-auto px-3 sm:px-4 pt-2 pb-8">
+        <div class="field-run-shell">
+            <div class="field-run-top px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <div class="font-pixel text-[9px] sm:text-[10px] text-[#f6d365]">BONUS MINI GAME</div>
+                    <h2 class="font-extrabold text-base sm:text-lg mt-1">ALDIAN'S PHM FIELD RUN</h2>
+                </div>
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <div class="text-right"><div class="text-[9px] font-bold tracking-widest text-white/65">SCORE</div><div id="field-score" class="field-run-hud-value text-[#f6d365]">00000</div></div>
+                    <div class="text-right"><div class="text-[9px] font-bold tracking-widest text-white/65">BEST</div><div id="field-best" class="field-run-hud-value text-[#9be0c1]">00000</div></div>
+                </div>
+            </div>
+            <div class="field-run-canvas-wrap">
+                <canvas id="field-run-canvas" width="900" height="280" role="img" aria-label="Game lari pixel art. Bantu Aldian melompati rintangan peralatan minyak dan gas."></canvas>
+                <div id="field-run-overlay" class="field-run-overlay">
+                    <div class="field-run-overlay-card">
+                        <div class="font-pixel text-[10px] sm:text-xs text-[#d96b52] mb-3">FIELD MISSION // 01</div>
+                        <h3 id="field-run-overlay-title" class="font-extrabold text-xl sm:text-2xl mb-2">Ready, Engineer?</h3>
+                        <p id="field-run-overlay-copy" class="text-xs sm:text-sm text-[#5d5149] leading-relaxed mb-4">Bantu Aldian melewati area operasi. Lompat untuk menghindari tubing, drill bit, dan BOP!</p>
+                        <button id="field-run-start" type="button" class="cozy-btn bg-phmOrange text-white px-6 py-3 font-extrabold text-xs sm:text-sm">▶ START RUN</button>
+                    </div>
+                </div>
+            </div>
+            <div class="px-3 sm:px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#f3e7d3] border-t-2 border-ink">
+                <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[10px] sm:text-xs font-bold text-ink/75">
+                    <span class="flex items-center gap-1.5"><kbd class="field-run-key">SPACE</kbd> / <kbd class="field-run-key">↑</kbd> JUMP</span>
+                    <span class="hidden sm:inline text-ink/30">•</span>
+                    <span>Hindari peralatan di jalur!</span>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <button id="field-run-sound" type="button" aria-pressed="true" aria-label="Matikan musik dan efek suara" class="cozy-btn bg-softYellow text-ink px-4 py-2.5 font-extrabold text-[11px] whitespace-nowrap w-full sm:w-auto">♫ SOUND: ON</button>
+                    <button id="field-run-jump" type="button" class="field-run-press cozy-btn bg-phmBlue text-white px-7 py-2.5 font-extrabold text-xs w-full sm:w-auto">JUMP ⤴</button>
+                </div>
+            </div>
+        </div>
+        <p class="text-[10px] sm:text-xs text-ink/60 text-center mt-3">Mini-game original bertema operasi migas dengan backsound chiptune 8-bit. Musik dan efek suara hanya aktif saat bermain; gunakan tombol <strong>SOUND</strong> untuk menyalakan atau mematikannya. Tekan <strong>Space</strong> atau tombol <strong>JUMP</strong> untuk melompat.</p>
+    </section>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 space-y-8 sm:space-y-10 pb-16">
+
+        <!-- SECTION 1: PROFIL & CUSTOM CHIBI AVATAR -->
+        <section id="profil" class="cozy-card p-5 sm:p-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b-2 border-dashed border-ink/20 pb-5 mb-6">
+                <div class="flex items-center gap-3.5 sm:gap-4">
+                    <!-- Mini Chibi Avatar Portrait in Orange PHM Coverall -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-b from-skyPeach to-skyMint border-[2.5px] border-ink shadow-[0_3px_0_#2b2320] overflow-hidden shrink-0 flex items-end justify-center">
+                        <svg viewBox="0 0 64 68" class="w-full h-full">
+                            <g stroke="#2b2320" stroke-width="2.5" stroke-linejoin="round">
+                                <!-- Orange Coverall Shoulders -->
+                                <path d="M10 68 Q12 48 32 48 Q52 48 54 68 Z" fill="#f97316"/>
+                                <rect x="19" y="50" width="4" height="18" fill="#f6d365" stroke-width="1.5"/>
+                                <rect x="41" y="50" width="4" height="18" fill="#f6d365" stroke-width="1.5"/>
+                                <line x1="32" y1="48" x2="32" y2="68" stroke-width="2"/>
+                                <!-- Head -->
+                                <circle cx="32" cy="31" r="15" fill="#fcd5ce"/>
+                                <path d="M17 28 Q20 22 32 23 Q44 22 47 28 L46 32 Q42 26 32 27 Q22 26 18 32 Z" fill="#2b2320"/>
+                                <circle cx="27" cy="32" r="1.8" fill="#2b2320" stroke="none"/>
+                                <circle cx="37" cy="32" r="1.8" fill="#2b2320" stroke="none"/>
+                                <path d="M29 37 Q32 40 35 37" fill="none" stroke="#2b2320" stroke-width="2"/>
+                                <!-- White Safety Helmet -->
+                                <path d="M15 24 Q15 9 32 9 Q49 9 49 24 Z" fill="#ffffff"/>
+                                <path d="M12 24 Q32 27 52 24 Q52 21 32 22 Q12 21 12 24 Z" fill="#f8fafc"/>
+                                <rect x="29" y="14" width="2" height="4.5" fill="#1d63b8" stroke="none"/>
+                                <rect x="31" y="14" width="2" height="4.5" fill="#52b788" stroke="none"/>
+                                <rect x="33" y="14" width="2" height="4.5" fill="#e63946" stroke="none"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div>
+                        <span class="inline-block bg-phmOrange text-white font-pixel text-[8px] sm:text-[9px] px-2.5 sm:px-3 py-1 rounded-full border-2 border-ink mb-1.5">
+                            PERTAMINA HULU MAHAKAM
+                        </span>
+                        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">
+                            ALDIAN <span class="text-phmOrange">👷‍♂️</span>
+                        </h1>
+                        <p class="text-xs sm:text-base font-bold text-ink/80 mt-0.5">
+                            Project Close Out Engineer | Reporting & External Coordination
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-auto grid grid-cols-2 sm:flex gap-2.5">
+                    <a href="#cv" class="cozy-btn bg-softYellow text-ink px-4 py-2.5 text-xs font-extrabold flex items-center justify-center gap-1.5">
+                        <span>📄</span> Riwayat Kerja
+                    </a>
+                    <a href="#portofolio" class="cozy-btn bg-phmBlue text-white px-4 py-2.5 text-xs font-extrabold flex items-center justify-center gap-1.5">
+                        <span>🏆</span> Portofolio
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <!-- Bio Dialogue Box -->
+                <div class="lg:col-span-2 bg-wallCream/60 border-2 border-ink rounded-2xl p-5 space-y-3">
+                    <div class="flex items-center gap-2 text-xs font-extrabold text-terracotta">
+                        <span>💬</span> PROFILE SUMMARY
+                    </div>
+                    <p class="text-sm leading-relaxed text-ink/90">
+                        Lulusan Teknik Perminyakan (<strong>Cum Laude, IPK 3.63</strong>) dengan pengalaman <strong>2+ tahun di PT Pertamina Hulu Mahakam</strong> dalam pelaporan <em>well project close-out</em>. Bertanggung jawab menyusun laporan teknis penyelesaian sumur (<strong>PPP</strong>) serta laporan penutupan biaya/finansial sumur (<strong>COR</strong>), dan mempresentasikan keduanya kepada <strong>SKK Migas</strong> untuk proses review dan audit.
+                    </p>
+                    <p class="text-sm leading-relaxed text-ink/90">
+                        Memiliki pengalaman langsung pada <em>well intervention</em> dan <em>well integrity</em> saat menjalani program magang di Divisi Well Intervention. Dikenal atas ketelitian tinggi, koordinasi lintas tim, serta penulisan teknis, dengan visi untuk terus berkembang ke peran <em>project</em> atau <em>well engineering</em> yang lebih luas.
+                    </p>
+                </div>
+
+                <!-- Quick Info Ticket -->
+                <div class="bg-cream border-2 border-ink rounded-2xl p-5 space-y-3 shadow-[0_3px_0_#2b2320]">
+                    <div class="text-xs font-extrabold text-ink border-b-2 border-ink/15 pb-2">
+                        🎫 IDENTITAS & STATUS
+                    </div>
+                    <ul class="space-y-2.5 text-xs font-medium">
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="text-ink/65">Lokasi</span>
+                            <span class="font-bold bg-skyPeach px-2.5 py-0.5 rounded-full border border-ink text-right">Kalimantan Timur, ID</span>
+                        </li>
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="text-ink/65">Perusahaan</span>
+                            <span class="font-bold bg-skyMint px-2.5 py-0.5 rounded-full border border-ink">Pertamina Hulu Mahakam</span>
+                        </li>
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="text-ink/65">Fokus Utama</span>
+                            <span class="font-bold bg-softYellow/60 px-2.5 py-0.5 rounded-full border border-ink">PPP, COR & SKK Migas</span>
+                        </li>
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="text-ink/65">WhatsApp</span>
+                            <a href="https://wa.me/6282149771507" target="_blank" rel="noopener" class="font-bold text-mintTeal hover:underline">+62 821 4977 1507</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ONLINE CV / RIWAYAT PEKERJAAN & PENDIDIKAN -->
+        <section id="cv" class="cozy-card p-6 sm:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div>
+                    <span class="inline-block bg-warmOrange text-ink font-pixel text-[9px] px-3 py-1.5 rounded-full border-2 border-ink mb-2">
+                        ONLINE CV // CAREER & EDUCATION
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-ink">Pengalaman Profesional & Pendidikan</h2>
+                </div>
+                <button onclick="window.print()" class="cozy-pill bg-cream hover:bg-softYellow px-4 py-2 text-xs font-bold flex items-center gap-2">
+                    <span>🖨️</span> Cetak / Simpan PDF CV
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Work Experience Timeline (2 Columns) -->
+                <div class="lg:col-span-2 space-y-4">
+                    <h3 class="text-sm font-extrabold text-terracotta uppercase tracking-wider flex items-center gap-2">
+                        <span>🏢</span> Riwayat Pekerjaan
+                    </h3>
+
+                    <!-- Job 1 -->
+                    <div class="bg-white border-2 border-ink rounded-2xl p-5 shadow-[0_3px_0_#2b2320] relative">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                            <div>
+                                <h4 class="text-base font-extrabold text-ink">Jr. Project Close-Out Engineer</h4>
+                                <p class="text-xs font-bold text-mintTeal">Pertamina Hulu Mahakam • Operation Hub Division - External Coordination Project Close-Out (Balikpapan)</p>
+                            </div>
+                            <span class="bg-softYellow border border-ink rounded-full px-3 py-1 text-[11px] font-bold shrink-0">
+                                2023 — Sekarang
+                            </span>
+                        </div>
+                        <ul class="text-xs sm:text-sm text-ink/85 space-y-1.5 list-disc list-inside leading-relaxed mt-3">
+                            <li>Menyusun dan mengompilasi laporan <strong>PPP (well technical completion)</strong> untuk mendokumentasikan operasi sumur demi persetujuan penyelesaian kerja sesuai regulasi internal dan <strong>SKK Migas</strong>.</li>
+                            <li>Menyusun dan mengompilasi laporan <strong>COR (well financial/cost close-out)</strong> dengan mengonsolidasikan data biaya sumur untuk tinjauan regulator.</li>
+                            <li>Mempresentasikan serta mempertahankan laporan PPP dan COR dalam rapat/audit bersama <strong>SKK Migas</strong>.</li>
+                            <li>Mengoordinasikan distribusi dokumen <strong>AFE (Authorization for Expenditure)</strong> ke entitas terkait berdasarkan permintaan resmi.</li>
+                            <li>Bermitra dengan divisi lintas fungsi untuk mengumpulkan, memverifikasi, dan melengkapi dokumen pendukung PPP/COR serta proaktif menindaklanjuti pengajuan yang belum lengkap agar jadwal pelaporan tetap tepat waktu.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span class="text-[11px] font-bold bg-skyMint/60 border border-ink px-2.5 py-0.5 rounded-full">PPP & COR Reporting</span>
+                            <span class="text-[11px] font-bold bg-skyPeach border border-ink px-2.5 py-0.5 rounded-full">SKK Migas Audit</span>
+                            <span class="text-[11px] font-bold bg-wallCream border border-ink px-2.5 py-0.5 rounded-full">AFE Coordination</span>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="bg-white border-2 border-ink rounded-2xl p-5 shadow-[0_3px_0_#2b2320]">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                            <div>
+                                <h4 class="text-base font-extrabold text-ink">Apprentice — Well Intervention Division</h4>
+                                <p class="text-xs font-bold text-terracotta">Pertamina Hulu Mahakam • Balikpapan</p>
+                            </div>
+                            <span class="bg-wallCream border border-ink rounded-full px-3 py-1 text-[11px] font-bold shrink-0">
+                                2022 — 2023
+                            </span>
+                        </div>
+                        <ul class="text-xs sm:text-sm text-ink/85 space-y-1.5 list-disc list-inside leading-relaxed mt-3">
+                            <li>Menganalisis dan merangkum data performa sumur menggunakan sistem <strong>TTCS</strong> untuk mendukung pengambilan keputusan rekayasa.</li>
+                            <li>Memperoleh pengalaman langsung dalam implementasi sistem <em>sand control</em> di PHM.</li>
+                            <li>Membangun dan memelihara database <em>workshop Well Integrity</em> untuk area <strong>Handil</strong> guna meningkatkan aksesibilitas dokumen tim.</li>
+                            <li>Mengolah dan memantau data KPI bulanan untuk <em>Well Integrity/Intervention</em> (<strong>WLI/INT</strong>).</li>
+                            <li>Berkontribusi dalam penyiapan data, analisis, dan dokumentasi untuk <strong>ASR Project Study 2023</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="bg-white border-2 border-ink rounded-2xl p-5 shadow-[0_3px_0_#2b2320]">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                            <div>
+                                <h4 class="text-base font-extrabold text-ink">Chief Design Officer</h4>
+                                <p class="text-xs font-bold text-pastelBlue">MigasID.com (Energy-sector education start-up) • Balikpapan</p>
+                            </div>
+                            <span class="bg-skyMint/50 border border-ink rounded-full px-3 py-1 text-[11px] font-bold shrink-0">
+                                2020 — 2022
+                            </span>
+                        </div>
+                        <ul class="text-xs sm:text-sm text-ink/85 space-y-1.5 list-disc list-inside leading-relaxed mt-3">
+                            <li>Merancang materi pemasaran dan promosi (sampul buku, poster, konten media sosial) untuk mendukung publikasi dan penjualan.</li>
+                            <li>Mendirikan dan memimpin program edukasi, serta menjadi pembicara mengenai beasiswa, persiapan ujian, dan dasar-dasar industri minyak & gas.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="bg-white border-2 border-ink rounded-2xl p-5 shadow-[0_3px_0_#2b2320]">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                            <div>
+                                <h4 class="text-base font-extrabold text-ink">Practical Work Trainee — Production Enhancement Division</h4>
+                                <p class="text-xs font-bold text-warmOrange">PT Pertamina Hulu Sanga Sanga • Remote</p>
+                            </div>
+                            <span class="bg-skyPeach border border-ink rounded-full px-3 py-1 text-[11px] font-bold shrink-0">
+                                Sep — Okt 2021
+                            </span>
+                        </div>
+                        <ul class="text-xs sm:text-sm text-ink/85 space-y-1.5 list-disc list-inside leading-relaxed mt-3">
+                            <li>Mempelajari teknologi sumur gas, termasuk sistem kompresor dan <em>Permanent Coiled Tubing Gas Lift</em> (<strong>PCTGL</strong>) menggunakan perangkat lunak <strong>PROSPER</strong> untuk studi kasus dan optimasi.</li>
+                            <li>Menganalisis program kerja sumur minyak, menyelesaikan studi kasus kelompok desain PCTGL, dan mempresentasikan temuan teknis akhir kepada mentor.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education & Organizational Column -->
+                <div class="space-y-5">
+                    <div>
+                        <h3 class="text-sm font-extrabold text-mintTeal uppercase tracking-wider flex items-center gap-2 mb-4">
+                            <span>🎓</span> Pendidikan
+                        </h3>
+
+                        <div class="bg-wallCream/70 border-2 border-ink rounded-2xl p-5 space-y-3">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[10px] font-pixel bg-pastelBlue text-white px-2.5 py-1 rounded-full border border-ink">S1 • 2018–2022</span>
+                                <span class="text-[11px] font-extrabold bg-softYellow px-2.5 py-0.5 rounded-full border border-ink">IPK 3.63 / 4.00</span>
+                            </div>
+                            <h4 class="text-sm font-extrabold text-ink">Bachelor of Petroleum Engineering</h4>
+                            <p class="text-xs font-bold text-terracotta">STT Migas Balikpapan (Cum Laude)</p>
+                            <div class="bg-cream border border-ink rounded-xl p-3 text-xs leading-relaxed">
+                                <p class="font-extrabold text-ink mb-1">📘 Skripsi / Thesis:</p>
+                                <p class="text-ink/80 italic">
+                                    "Wellbore Modelling in Horizontal Oil Well: The Impact of Well Trajectory on Flow Regime for Toe-Up and Toe-Down Geometry on Well F-14."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-extrabold text-terracotta uppercase tracking-wider flex items-center gap-2 mb-4">
+                            <span>🤝</span> Pengalaman Organisasi
+                        </h3>
+
+                        <div class="bg-wallCream/70 border-2 border-ink rounded-2xl p-5 space-y-3 text-xs">
+                            <div class="bg-cream border border-ink rounded-xl p-3">
+                                <div class="flex justify-between items-center gap-1 mb-1">
+                                    <span class="font-extrabold text-ink">Deputy Head, KOMINFO Dept.</span>
+                                    <span class="text-[10px] font-bold bg-skyMint px-2 py-0.5 rounded-full border border-ink">2020–2022</span>
+                                </div>
+                                <p class="font-bold text-mintTeal">Sobat Bumi Indonesia Regional Benua Etam</p>
+                                <p class="text-ink/75 mt-1">Memimpin tim produksi konten publikasi & media sosial serta mengoordinasikan inisiatif komunitas & lingkungan.</p>
+                            </div>
+
+                            <div class="bg-cream border border-ink rounded-xl p-3">
+                                <div class="flex justify-between items-center gap-1 mb-1">
+                                    <span class="font-extrabold text-ink">Deputy Head, Design & Journalistic</span>
+                                    <span class="text-[10px] font-bold bg-skyPeach px-2 py-0.5 rounded-full border border-ink">2020–2021</span>
+                                </div>
+                                <p class="font-bold text-terracotta">IATMI SM STT Migas Balikpapan</p>
+                                <p class="text-ink/75 mt-1">Mengelola output desain tim dan blog/website organisasi, serta membawakan sesi pelatihan dasar teknik perminyakan.</p>
+                            </div>
+
+                            <div class="bg-cream border border-ink rounded-xl p-3">
+                                <div class="flex justify-between items-center gap-1 mb-1">
+                                    <span class="font-extrabold text-ink">Member, Design & Syiar Media</span>
+                                    <span class="text-[10px] font-bold bg-softYellow/60 px-2 py-0.5 rounded-full border border-ink">2019–2020</span>
+                                </div>
+                                <p class="text-ink/75 mt-1">Memproduksi materi publikasi, mengelola media sosial, dan mengembangkan <strong>website pelacakan donasi real-time</strong> untuk bantuan banjir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PORTOFOLIO, PUBLIKASI & PENGHARGAAN -->
+        <section id="portofolio" class="cozy-card p-6 sm:p-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="inline-block bg-pastelBlue text-white font-pixel text-[9px] px-3 py-1.5 rounded-full border-2 border-ink mb-2">
+                        PORTFOLIO, PUBLICATION & AWARDS
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-ink">Portofolio Proyek, Publikasi & Penghargaan</h2>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div class="flex flex-wrap gap-2 text-xs font-bold">
+                    <button onclick="filterProjects('all', this)" class="filter-btn cozy-pill tab-active px-3.5 py-1.5 bg-cream">Semua</button>
+                    <button onclick="filterProjects('engineering', this)" class="filter-btn cozy-pill px-3.5 py-1.5 bg-cream">Well & Close-Out</button>
+                    <button onclick="filterProjects('research', this)" class="filter-btn cozy-pill px-3.5 py-1.5 bg-cream">Riset & Publikasi</button>
+                    <button onclick="filterProjects('digital', this)" class="filter-btn cozy-pill px-3.5 py-1.5 bg-cream">Web & Desain</button>
+                </div>
+            </div>
+
+            <!-- Featured Publication Banner -->
+            <div class="bg-gradient-to-r from-softYellow/45 via-skyPeach to-skyMint/55 border-2 border-ink rounded-2xl p-5 shadow-[0_3px_0_#2b2320] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="space-y-1.5">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="font-pixel text-[9px] bg-terracotta text-white px-2.5 py-1 rounded-full border border-ink">PUBLICATION • SEP 2021</span>
+                        <span class="text-xs font-extrabold text-ink">45th IPA Convention & Exhibition (IPA21-SE-253)</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-extrabold text-ink">
+                        Co-Author: "Optimizing Enhanced Oil Recovery Method Using Nanotechnology to Maximize Oil Production in Old Wells"
+                    </h3>
+                    <p class="text-xs text-ink/75">Indonesian Petroleum Association Convention & Exhibition</p>
+                </div>
+                <span class="text-4xl shrink-0">📜</span>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6" id="projects-grid">
+
+                <!-- Project 1 -->
+                <article data-category="engineering" class="project-item cozy-card cozy-card-hover bg-white overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-32 bg-gradient-to-r from-skyMint to-pastelBlue/40 border-b-2 border-ink p-4 flex items-center justify-between">
+                            <div class="bg-cream border-2 border-ink rounded-xl px-3 py-2 shadow-[0_3px_0_#2b2320]">
+                                <span class="font-pixel text-[9px] text-phmBlue block">PHM • 2023–PRESENT</span>
+                                <span class="text-xs font-extrabold text-ink">PPP & COR Close-Out</span>
+                            </div>
+                            <span class="text-5xl">🛢️</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[11px] font-bold bg-skyMint/60 border border-ink px-2.5 py-0.5 rounded-full">Well & Close-Out</span>
+                                <span class="text-[11px] font-semibold text-ink/60">SKK Migas Audit</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-ink mb-2">Pelaporan & Audit Regulatory PPP / COR Sumur</h3>
+                            <p class="text-xs sm:text-sm text-ink/80 leading-relaxed">
+                                Kompilasi laporan teknis penyelesaian sumur (PPP), konsolidasi biaya penutupan sumur (COR), distribusi AFE, serta presentasi audit di hadapan SKK Migas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-2">
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-bold text-ink/70">
+                            <span>#PPP</span>
+                            <span>#COR</span>
+                            <span>#SKKMigas</span>
+                        </div>
+                        <button onclick="openModal('Pelaporan & Audit Regulatory PPP / COR Sumur', 'Bertanggung jawab penuh pada Operation Hub Division (External Coordination Project Close-Out) PT Pertamina Hulu Mahakam dalam menyiapkan dokumen PPP (technical well completion) dan COR (well financial/cost close-out), mengoordinasikan AFE, serta mempertahankan status laporan teknis maupun finansial pada sesi review/audit SKK Migas.', ['PPP Technical Report', 'COR Cost Close-Out', 'SKK Migas Review', 'AFE Distribution'])" class="cozy-pill bg-softYellow px-4 py-1.5 text-xs font-extrabold">
+                            Detail →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article data-category="engineering" class="project-item cozy-card cozy-card-hover bg-white overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-32 bg-gradient-to-r from-skyPeach to-softYellow/60 border-b-2 border-ink p-4 flex items-center justify-between">
+                            <div class="bg-cream border-2 border-ink rounded-xl px-3 py-2 shadow-[0_3px_0_#2b2320]">
+                                <span class="font-pixel text-[9px] text-terracotta block">PHM • 2022–2023</span>
+                                <span class="text-xs font-extrabold text-ink">Handil Well Integrity</span>
+                            </div>
+                            <span class="text-5xl">🗄️</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[11px] font-bold bg-softYellow/70 border border-ink px-2.5 py-0.5 rounded-full">Well & Close-Out</span>
+                                <span class="text-[11px] font-semibold text-ink/60">Well Intervention</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-ink mb-2">Database Well Integrity Handil & WLI/INT KPI</h3>
+                            <p class="text-xs sm:text-sm text-ink/80 leading-relaxed">
+                                Pembangunan database workshop Well Integrity area Handil, analisis performa sumur berbasis TTCS, pemantauan KPI bulanan WLI/INT, dan dokumentasi ASR Project Study 2023.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-2">
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-bold text-ink/70">
+                            <span>#TTCS</span>
+                            <span>#WellIntegrity</span>
+                            <span>#ASR2023</span>
+                        </div>
+                        <button onclick="openModal('Database Well Integrity Handil & WLI/INT KPI', 'Membangun dan memelihara database workshop Well Integrity untuk area Handil guna mempercepat akses dokumen teknis tim, mengolah data performa sumur melalui sistem TTCS, serta memantau KPI bulanan Well Integrity/Intervention (WLI/INT) dan studi ASR 2023.', ['TTCS System', 'Well Integrity Database', 'WLI/INT KPI', 'ASR Project Study'])" class="cozy-pill bg-mintTeal text-white px-3.5 py-1.5 text-xs font-extrabold">
+                            Detail →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article data-category="research" class="project-item cozy-card cozy-card-hover bg-white overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-32 bg-gradient-to-r from-pastelBlue/35 to-skyMint border-b-2 border-ink p-4 flex items-center justify-between">
+                            <div class="bg-cream border-2 border-ink rounded-xl px-3 py-2 shadow-[0_3px_0_#2b2320]">
+                                <span class="font-pixel text-[9px] text-pastelBlue block">RESEARCH & PROSPER</span>
+                                <span class="text-xs font-extrabold text-ink">Well F-14 & PCTGL</span>
+                            </div>
+                            <span class="text-5xl">📈</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[11px] font-bold bg-pastelBlue/30 border border-ink px-2.5 py-0.5 rounded-full">Riset & Publikasi</span>
+                                <span class="text-[11px] font-semibold text-ink/60">2021–2022</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-ink mb-2">Wellbore Modelling Horizontal Well F-14 & Optimasi PCTGL</h3>
+                            <p class="text-xs sm:text-sm text-ink/80 leading-relaxed">
+                                Pemodelan rezim aliran geometri Toe-Up vs Toe-Down pada sumur horizontal F-14, serta studi optimasi Permanent Coiled Tubing Gas Lift (PCTGL) dengan PROSPER di PHSS.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-2">
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-bold text-ink/70">
+                            <span>#PROSPER</span>
+                            <span>#HorizontalWell</span>
+                            <span>#PCTGL</span>
+                        </div>
+                        <button onclick="openModal('Wellbore Modelling Horizontal Well F-14 & Optimasi PCTGL', 'Mencakup riset skripsi pemodelan wellbore sumur minyak horizontal (analisis dampak trajektori terhadap flow regime pada geometri Toe-Up dan Toe-Down Sumur F-14) serta studi kasus optimasi Permanent Coiled Tubing Gas Lift (PCTGL) menggunakan PROSPER di PT Pertamina Hulu Sanga Sanga.', ['PROSPER Simulation', 'Horizontal Wellbore Modelling', 'Gas Lift Optimization'])" class="cozy-pill bg-softYellow px-3.5 py-1.5 text-xs font-extrabold">
+                            Detail →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article data-category="digital" class="project-item cozy-card cozy-card-hover bg-white overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-32 bg-gradient-to-r from-busGreen/30 to-skyPeach border-b-2 border-ink p-4 flex items-center justify-between">
+                            <div class="bg-cream border-2 border-ink rounded-xl px-3 py-2 shadow-[0_3px_0_#2b2320]">
+                                <span class="font-pixel text-[9px] text-busGreen block">WEB & CREATIVE</span>
+                                <span class="text-xs font-extrabold text-ink">MigasID & Flood Relief</span>
+                            </div>
+                            <span class="text-5xl">🎨</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[11px] font-bold bg-busGreen/40 border border-ink px-2.5 py-0.5 rounded-full">Web & Desain</span>
+                                <span class="text-[11px] font-semibold text-ink/60">2019–2022</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-ink mb-2">Platform Edukasi MigasID.com & Web Donasi Real-Time</h3>
+                            <p class="text-xs sm:text-sm text-ink/80 leading-relaxed">
+                                Pengembangan website pelacakan donasi bantuan banjir secara real-time, serta pengarahan visual & materi promosi sebagai Chief Design Officer di MigasID.com.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-2">
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-bold text-ink/70">
+                            <span>#WebDev</span>
+                            <span>#Photoshop</span>
+                            <span>#Illustrator</span>
+                        </div>
+                        <button onclick="openModal('Platform Edukasi MigasID.com & Web Donasi Real-Time', 'Mengembangkan website pelacakan donasi real-time untuk transparansi bantuan bencana banjir, serta memimpin arahan visual (sampul buku, poster, konten digital) dan program edukasi industri migas di MigasID.com.', ['Web Development', 'Adobe Photoshop & Illustrator', 'Visual Branding'])" class="cozy-pill bg-mintTeal text-white px-3.5 py-1.5 text-xs font-extrabold">
+                            Detail →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Awards & Achievements Grid -->
+            <div class="pt-4 border-t-2 border-dashed border-ink/20">
+                <h3 class="text-sm font-extrabold text-terracotta uppercase tracking-wider flex items-center gap-2 mb-4">
+                    <span>🏆</span> Awards & Achievements
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div class="bg-cream border-2 border-ink rounded-xl p-3.5 flex items-start gap-3 shadow-[0_2px_0_#2b2320]">
+                        <span class="text-2xl">🌱</span>
+                        <div>
+                            <p class="font-extrabold text-ink">Pertamina Sobat Bumi Scholarship (2020–2022)</p>
+                            <p class="text-ink/75 mt-0.5">Pertamina Foundation — Diberikan 2 tahun berturut-turut atas prestasi akademik dan kontribusi sosial/lingkungan.</p>
+                        </div>
+                    </div>
+                    <div class="bg-cream border-2 border-ink rounded-xl p-3.5 flex items-start gap-3 shadow-[0_2px_0_#2b2320]">
+                        <span class="text-2xl">🌏</span>
+                        <div>
+                            <p class="font-extrabold text-ink">Top 8 — SPE Asia Pacific Regional Student Paper Contest (2021)</p>
+                            <p class="text-ink/75 mt-0.5">Kompetisi karya tulis ilmiah mahasiswa tingkat regional Asia Pasifik.</p>
+                        </div>
+                    </div>
+                    <div class="bg-cream border-2 border-ink rounded-xl p-3.5 flex items-start gap-3 shadow-[0_2px_0_#2b2320]">
+                        <span class="text-2xl">🥇</span>
+                        <div>
+                            <p class="font-extrabold text-ink">Favorite Winner — Paper & Poster Competition, DERRICK (2021)</p>
+                            <p class="text-ink/75 mt-0.5">Penghargaan juara favorit kompetisi paper dan poster teknik perminyakan.</p>
+                        </div>
+                    </div>
+                    <div class="bg-cream border-2 border-ink rounded-xl p-3.5 flex items-start gap-3 shadow-[0_2px_0_#2b2320]">
+                        <span class="text-2xl">🎙️</span>
+                        <div>
+                            <p class="font-extrabold text-ink">Finalist — National Debate Competition, PETROFORIA (2021)</p>
+                            <p class="text-ink/75 mt-0.5">Finalis kompetisi debat nasional seputar isu energi dan industri migas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SKILLS & COMPETENCIES -->
+        <section id="skills" class="cozy-card p-6 sm:p-8">
+            <div class="mb-6">
+                <span class="inline-block bg-mintTeal text-white font-pixel text-[9px] px-3 py-1.5 rounded-full border-2 border-ink mb-2">
+                    SKILLS & TOOLKIT
+                </span>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-ink">Keahlian Teknis, Profesional & Bahasa</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Technical Tools -->
+                <div class="bg-white border-2 border-ink rounded-2xl p-5 space-y-4">
+                    <h3 class="text-sm font-extrabold text-ink flex items-center gap-2">
+                        <span>🛠️</span> Technical & Software Tools
+                    </h3>
+
+                    <div class="space-y-3 text-xs font-bold">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Microsoft Office (Excel, Word, PowerPoint)</span>
+                                <span class="text-terracotta">96%</span>
+                            </div>
+                            <div class="w-full h-3.5 bg-wallCream rounded-full border-2 border-ink overflow-hidden p-0.5">
+                                <div class="h-full bg-terracotta rounded-full" style="width: 96%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Technical Reporting (PPP, COR, AFE) & TTCS</span>
+                                <span class="text-mintTeal">95%</span>
+                            </div>
+                            <div class="w-full h-3.5 bg-wallCream rounded-full border-2 border-ink overflow-hidden p-0.5">
+                                <div class="h-full bg-mintTeal rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Adobe Photoshop & Adobe Illustrator</span>
+                                <span class="text-pastelBlue">90%</span>
+                            </div>
+                            <div class="w-full h-3.5 bg-wallCream rounded-full border-2 border-ink overflow-hidden p-0.5">
+                                <div class="h-full bg-pastelBlue rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>PROSPER & Visual Basic 6.0</span>
+                                <span class="text-warmOrange">85%</span>
+                            </div>
+                            <div class="w-full h-3.5 bg-wallCream rounded-full border-2 border-ink overflow-hidden p-0.5">
+                                <div class="h-full bg-warmOrange rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Competencies & Languages -->
+                <div class="bg-wallCream/70 border-2 border-ink rounded-2xl p-5 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-sm font-extrabold text-ink flex items-center gap-2 mb-3">
+                            <span>⭐</span> Professional Competencies
+                        </h3>
+                        <div class="flex flex-wrap gap-2 text-xs font-bold">
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">Cross-functional Coordination</span>
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">Technical Reporting & Documentation</span>
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">SKK Migas Regulatory Presentation</span>
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">Leadership</span>
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">Problem-Solving</span>
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">Public Speaking</span>
+                            <span class="bg-cream border-2 border-ink rounded-full px-3 py-1 shadow-[0_2px_0_#2b2320]">Accuracy Under Deadline</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t-2 border-ink/15">
+                        <h3 class="text-sm font-extrabold text-ink flex items-center gap-2 mb-2.5">
+                            <span>🌐</span> Languages
+                        </h3>
+                        <div class="grid grid-cols-2 gap-3 text-xs">
+                            <div class="bg-cream border-2 border-ink rounded-xl p-3 shadow-[0_2px_0_#2b2320]">
+                                <p class="font-extrabold text-ink">🇮🇩 Indonesian</p>
+                                <p class="text-[11px] text-mintTeal font-bold mt-0.5">Native / Active</p>
+                            </div>
+                            <div class="bg-cream border-2 border-ink rounded-xl p-3 shadow-[0_2px_0_#2b2320]">
+                                <p class="font-extrabold text-ink">🇬🇧 English</p>
+                                <p class="text-[11px] text-pastelBlue font-bold mt-0.5">Working Proficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: KONTAK & PC BANG MESSAGE BOARD -->
+        <section id="kontak" class="cozy-card p-6 sm:p-8 bg-gradient-to-br from-cream to-skyPeach/60">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <span class="inline-block bg-terracotta text-white font-pixel text-[9px] px-3 py-1.5 rounded-full border-2 border-ink">
+                        PC방 MESSAGE BOARD
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-ink leading-tight">
+                        Mari Terhubung & Berkolaborasi!
+                    </h2>
+                    <p class="text-sm text-ink/80 leading-relaxed">
+                        Terbuka untuk diskusi seputar <em>project close-out</em>, <em>well engineering</em>, peluang karier, maupun kolaborasi proyek. Hubungi saya langsung melalui kanal berikut:
+                    </p>
+
+                    <div class="bg-white/90 border-2 border-ink rounded-2xl p-4 space-y-2 text-xs font-bold">
+                        <p>📍 <strong>Lokasi:</strong> Kalimantan Timur, Indonesia</p>
+                    <!-- Social & Direct Contact Pills (Mobile Grid Friendly) -->
+                    <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5 sm:gap-3 pt-1">
+                        <a href="mailto:aldiansgb@gmail.com" class="cozy-pill bg-white px-4 py-2.5 text-xs font-extrabold flex items-center justify-center gap-2">
+                            <span>✉️</span> Email
+                        </a>
+                        <a href="https://wa.me/6282149771507" target="_blank" rel="noopener" class="cozy-pill bg-phmGreen text-ink px-4 py-2.5 text-xs font-extrabold flex items-center justify-center gap-2">
+                            <span>💬</span> WhatsApp
+                        </a>
+                        <a href="https://linkedin.com/in/aldianonlinked" target="_blank" rel="noopener" class="cozy-pill bg-phmBlue text-white px-4 py-2.5 text-xs font-extrabold flex items-center justify-center gap-2">
+                            <span>💼</span> LinkedIn
+                        </a>
+                        <button type="button" onclick="copyEmail()" class="cozy-pill bg-softYellow px-4 py-2.5 text-xs font-extrabold flex items-center justify-center gap-2">
+                            <span>📋</span> Salin Email
+                        </button>
+                    </div>
+                    <p id="copy-toast" class="text-xs font-bold text-phmBlue hidden">
+                        ✅ Alamat email (aldiansgb@gmail.com) berhasil disalin ke clipboard!
+                    </p>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <form onsubmit="sendMessage(event)" class="bg-white border-2 border-ink rounded-2xl p-5 sm:p-6 shadow-[0_4px_0_#2b2320] space-y-4">
+                    <div>
+                        <label class="block text-xs font-extrabold text-ink mb-1.5">Nama Anda</label>
+                        <input type="text" id="sender-name" required placeholder="Contoh: Budi Santoso" class="w-full bg-cream border-2 border-ink rounded-xl px-3.5 py-2.5 text-sm sm:text-xs font-medium focus:outline-none focus:bg-softYellow/20">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-extrabold text-ink mb-1.5">Email / Kontak</label>
+                        <input type="email" id="sender-email" required placeholder="nama@perusahaan.com" class="w-full bg-cream border-2 border-ink rounded-xl px-3.5 py-2.5 text-sm sm:text-xs font-medium focus:outline-none focus:bg-softYellow/20">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-extrabold text-ink mb-1.5">Pesan</label>
+                        <textarea rows="3" id="sender-msg" required placeholder="Halo Aldian, saya tertarik berdiskusi mengenai..." class="w-full bg-cream border-2 border-ink rounded-xl px-3.5 py-2.5 text-sm sm:text-xs font-medium focus:outline-none focus:bg-softYellow/20"></textarea>
+                    </div>
+                    <button type="submit" class="cozy-btn w-full bg-phmOrange text-white py-3 text-xs font-extrabold tracking-wide">
+                        🚀 Kirim Pesan Sekarang
+                    </button>
+                    <div id="form-toast" class="hidden bg-phmGreen/25 border-2 border-ink rounded-xl p-3 text-xs font-bold text-ink text-center">
+                        🎉 Terima kasih! Pesan Anda siap diteruskan ke aldiansgb@gmail.com.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t-2 border-ink bg-cream py-6 px-4 text-center">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-semibold text-ink/75">
+            <p>© 2026 <strong>ALDIAN</strong> • Project Close Out Engineer • PT Pertamina Hulu Mahakam</p>
+            <p class="font-pixel text-[9px] text-phmOrange">SAFETY FIRST • READY FOR GITHUB PAGES ✨</p>
+        </div>
+    </footer>
+
+    <!-- PROJECT DETAIL MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-ink/60 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div class="cozy-card max-w-lg w-full p-5 sm:p-6 bg-cream relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-phmRed text-white border-2 border-ink font-extrabold text-xs flex items-center justify-center shadow-[0_2px_0_#2b2320]">
+                ✕
+            </button>
+            <span class="inline-block bg-softYellow border border-ink rounded-full px-3 py-0.5 text-[10px] font-pixel mb-2">PROJECT DETAIL</span>
+            <h3 id="modal-title" class="text-base sm:text-lg font-extrabold text-ink pr-10 mb-3">Judul Proyek</h3>
+            <p id="modal-desc" class="text-xs sm:text-sm text-ink/85 leading-relaxed mb-4">Deskripsi proyek.</p>
+            <div id="modal-tags" class="flex flex-wrap gap-1.5 mb-5"></div>
+            <div class="flex justify-end">
+                <button onclick="closeModal()" class="cozy-btn bg-phmBlue text-white px-5 py-2 text-xs font-extrabold">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        const phmBadges = [
+            'PPP APPROVED! 📋',
+            'COR VERIFIED! ✅',
+            'ZERO LTI 🦺',
+            'SKK MIGAS READY! 🛢️',
+            '+10 SAFETY FIRST!'
+        ];
+        let badgeIdx = 0;
+
+        // Floating Pertamina / HSE popup animation when tapping the character or PHM hub
+        function triggerSafetyBoost(e) {
+            const layer = document.getElementById('popup-layer');
+            const rect = document.getElementById('street-canvas').getBoundingClientRect();
+            const x = e && e.clientX ? e.clientX - rect.left : rect.width * 0.45;
+            const y = e && e.clientY ? e.clientY - rect.top : rect.height * 0.45;
+
+            const pop = document.createElement('div');
+            pop.className = 'hp-pop absolute font-pixel text-[9px] sm:text-[10px] bg-cream border-2 border-ink px-2.5 py-1 rounded-full text-phmOrange shadow-[0_2px_0_#2b2320] whitespace-nowrap';
+            pop.style.left = `${Math.max(12, Math.min(rect.width - 155, x - 55))}px`;
+            pop.style.top = `${Math.max(12, y - 24)}px`;
+            pop.textContent = phmBadges[badgeIdx % phmBadges.length];
+            badgeIdx++;
+            layer.appendChild(pop);
+
+            setTimeout(() => pop.remove(), 1150);
+        }
+
+        // Portfolio Category Filter
+        function filterProjects(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('tab-active'));
+            btn.classList.add('tab-active');
+
+            document.querySelectorAll('.project-item').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Project Detail Modal
+        function openModal(title, desc, tags) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-desc').textContent = desc;
+            const tagsWrap = document.getElementById('modal-tags');
+            tagsWrap.innerHTML = '';
+            tags.forEach(t => {
+                const span = document.createElement('span');
+                span.className = 'text-[11px] font-bold bg-skyMint/60 border border-ink px-2.5 py-0.5 rounded-full';
+                span.textContent = t;
+                tagsWrap.appendChild(span);
+            });
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Copy Email Helper (iFrame-safe fallback)
+        function copyEmail() {
+            const email = 'aldiansgb@gmail.com';
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('copy-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3500);
+        }
+
+        // Contact Form Handler (opens mailto pre-filled + shows confirmation)
+        function sendMessage(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value;
+            const email = document.getElementById('sender-email').value;
+            const msg = document.getElementById('sender-msg').value;
+            const subject = encodeURIComponent(`Halo Aldian — Pesan dari ${name}`);
+            const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${msg}`);
+            window.open(`mailto:aldiansgb@gmail.com?subject=${subject}&body=${body}`, '_blank');
+
+            const toast = document.getElementById('form-toast');
+            toast.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => toast.classList.add('hidden'), 5000);
+        }
+    </script>
+
+    <script>
+    // ALDIAN'S PHM FIELD RUN — keyboard + touch endless runner
+    (() => {
+        const canvas = document.getElementById('field-run-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const W = 900, H = 280, groundY = 224;
+        const overlay = document.getElementById('field-run-overlay');
+        const overlayTitle = document.getElementById('field-run-overlay-title');
+        const overlayCopy = document.getElementById('field-run-overlay-copy');
+        const startBtn = document.getElementById('field-run-start');
+        const jumpBtn = document.getElementById('field-run-jump');
+        const scoreEl = document.getElementById('field-score');
+        const bestEl = document.getElementById('field-best');
+        const soundBtn = document.getElementById('field-run-sound');
+        let state = 'ready';
+        let raf = 0;
+        let lastTime = 0;
+        let elapsed = 0;
+        let score = 0;
+        let best = 0;
+        let speed = 6.1;
+        let spawnIn = 72;
+        let groundShift = 0;
+        let obstacles = [];
+        let particles = [];
+        let blink = 0;
+        let lastJumpAt = 0;
+        let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+
+        // Original 8-bit soundtrack synthesized in-browser. No game soundtrack samples
+        // or external audio files are used. Audio is activated only during FIELD RUN.
+        let soundEnabled = true;
+        let audioCtx = null;
+        let masterGain = null;
+        let musicGain = null;
+        let sfxGain = null;
+        let musicTimer = null;
+        let musicStep = 0;
+        let nextMusicTime = 0;
+        const beatSeconds = 60 / 132 / 2; // upbeat eighth-note pulse
+        const melody = [
+            587.33, 783.99, 880.00, 783.99, 659.25, 783.99, 987.77, 880.00,
+            783.99, 659.25, 587.33, 659.25, 783.99, 880.00, 1174.66, null,
+            987.77, 880.00, 783.99, 659.25, 587.33, 659.25, 783.99, 987.77,
+            880.00, 783.99, 659.25, 587.33, 523.25, 587.33, 659.25, null
+        ];
+        const bassLine = [196.00, 146.83, 164.81, 130.81, 196.00, 174.61, 146.83, 130.81];
+
+        function ensureAudio() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContextClass) return false;
+                audioCtx = new AudioContextClass();
+                masterGain = audioCtx.createGain();
+                musicGain = audioCtx.createGain();
+                sfxGain = audioCtx.createGain();
+                masterGain.gain.value = 0.72;
+                musicGain.gain.value = 0;
+                sfxGain.gain.value = 0.62;
+                musicGain.connect(masterGain);
+                sfxGain.connect(masterGain);
+                masterGain.connect(audioCtx.destination);
+            }
+            if (audioCtx.state === 'suspended') audioCtx.resume().catch(() => {});
+            return true;
+        }
+
+        function tone(freq, when, duration, wave='square', volume=0.07, endFreq=null, destination=null) {
+            if (!audioCtx || !freq || !destination) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = wave;
+            osc.frequency.setValueAtTime(freq, when);
+            if (endFreq) osc.frequency.exponentialRampToValueAtTime(Math.max(35, endFreq), when + duration);
+            gain.gain.setValueAtTime(0.0001, when);
+            gain.gain.linearRampToValueAtTime(volume, when + 0.012);
+            gain.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+            osc.connect(gain); gain.connect(destination);
+            osc.start(when); osc.stop(when + duration + 0.025);
+        }
+
+        function scheduleMusic() {
+            if (!audioCtx || !musicGain || state !== 'running' || !soundEnabled) return;
+            const horizon = audioCtx.currentTime + 0.13;
+            while (nextMusicTime < horizon) {
+                const step = musicStep % melody.length;
+                const note = melody[step];
+                if (note) tone(note, nextMusicTime, beatSeconds * 0.78, 'square', 0.047, null, musicGain);
+                if (step % 4 === 0) {
+                    const bass = bassLine[Math.floor(step / 4) % bassLine.length];
+                    tone(bass, nextMusicTime, beatSeconds * 2.9, 'triangle', 0.072, null, musicGain);
+                }
+                if (step % 2 === 0) tone(1650, nextMusicTime, 0.025, 'square', 0.009, 1100, musicGain);
+                nextMusicTime += beatSeconds;
+                musicStep++;
+            }
+        }
+
+        function startMusic() {
+            if (!soundEnabled || !ensureAudio()) return;
+            stopMusic();
+            musicGain.gain.cancelScheduledValues(audioCtx.currentTime);
+            musicGain.gain.setTargetAtTime(0.82, audioCtx.currentTime, 0.035);
+            musicStep = 0;
+            nextMusicTime = audioCtx.currentTime + 0.045;
+            scheduleMusic();
+            musicTimer = window.setInterval(scheduleMusic, 25);
+        }
+
+        function stopMusic() {
+            if (musicTimer) { clearInterval(musicTimer); musicTimer = null; }
+            if (audioCtx && musicGain) {
+                musicGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                musicGain.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.035);
+            }
+        }
+
+        function playJumpSfx() {
+            if (!soundEnabled || !ensureAudio()) return;
+            const t = audioCtx.currentTime + 0.005;
+            tone(420, t, 0.09, 'square', 0.105, 760, sfxGain);
+            tone(760, t + 0.055, 0.07, 'triangle', 0.055, 980, sfxGain);
+        }
+
+        function playPassSfx() {
+            if (!soundEnabled || !ensureAudio()) return;
+            const t = audioCtx.currentTime + 0.005;
+            tone(880, t, 0.055, 'square', 0.065, null, sfxGain);
+            tone(1174.66, t + 0.065, 0.075, 'square', 0.07, null, sfxGain);
+        }
+
+        function playGameOverSfx() {
+            if (!soundEnabled || !ensureAudio()) return;
+            const t = audioCtx.currentTime + 0.04;
+            tone(587.33, t, 0.18, 'triangle', 0.11, 440, sfxGain);
+            tone(440, t + 0.17, 0.2, 'triangle', 0.10, 329.63, sfxGain);
+            tone(329.63, t + 0.35, 0.34, 'triangle', 0.095, 220, sfxGain);
+        }
+
+        function updateSoundButton() {
+            if (!soundBtn) return;
+            soundBtn.textContent = soundEnabled ? '♫ SOUND: ON' : '♫ SOUND: OFF';
+            soundBtn.setAttribute('aria-pressed', soundEnabled ? 'true' : 'false');
+            soundBtn.setAttribute('aria-label', soundEnabled ? 'Matikan musik dan efek suara' : 'Aktifkan musik dan efek suara');
+            soundBtn.classList.toggle('bg-softYellow', soundEnabled);
+            soundBtn.classList.toggle('bg-white', !soundEnabled);
+        }
+        try { best = Number(localStorage.getItem('aldianPhmFieldRunBest') || 0); } catch(e) { best = 0; }
+        bestEl.textContent = String(best).padStart(5, '0');
+
+        function resizeCanvas() {
+            dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+            canvas.width = W * dpr;
+            canvas.height = H * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            draw();
+        }
+
+        const player = { x: 104, y: groundY - 55, w: 38, h: 55, vy: 0, onGround: true, runFrame: 0 };
+
+        function rect(x,y,w,h,color) { ctx.fillStyle = color; ctx.fillRect(Math.round(x), Math.round(y), Math.round(w), Math.round(h)); }
+        function line(x1,y1,x2,y2,color,width=2) { ctx.strokeStyle = color; ctx.lineWidth = width; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); }
+        function outlineRect(x,y,w,h,fill,stroke='#2b2320',lw=2) { rect(x,y,w,h,fill); ctx.strokeStyle=stroke; ctx.lineWidth=lw; ctx.strokeRect(Math.round(x)+lw/2,Math.round(y)+lw/2,Math.round(w)-lw,Math.round(h)-lw); }
+
+        function drawBackground() {
+            const sky = ctx.createLinearGradient(0,0,0,H);
+            sky.addColorStop(0,'#f9e5d1'); sky.addColorStop(.64,'#f3e5dd'); sky.addColorStop(1,'#d5e9e4');
+            rect(0,0,W,H,sky);
+            // Warm sun + tiny pixel clouds
+            rect(748,35,34,34,'#f6d365'); rect(756,27,18,50,'#f6d365');
+            [[105,48],[128,48],[151,48],[128,37],[330,72],[351,72],[372,72],[351,61]].forEach(([x,y])=>rect(x,y,18,7,'#fffaf2'));
+            // Distant green hills
+            ctx.fillStyle='#93c9a2'; ctx.beginPath(); ctx.moveTo(0,170); ctx.quadraticCurveTo(130,105,260,167); ctx.quadraticCurveTo(390,110,540,165); ctx.quadraticCurveTo(700,95,900,160); ctx.lineTo(900,224); ctx.lineTo(0,224); ctx.fill();
+            ctx.fillStyle='#6eae83'; ctx.beginPath(); ctx.moveTo(0,190); ctx.quadraticCurveTo(180,142,330,190); ctx.quadraticCurveTo(520,138,700,190); ctx.quadraticCurveTo(810,153,900,184); ctx.lineTo(900,224); ctx.lineTo(0,224); ctx.fill();
+            // PHM field buildings, tanks and rig silhouettes
+            outlineRect(530,112,124,64,'#ead8bd','#52645b',3); rect(542,128,25,21,'#8bb6c7'); rect(576,128,25,21,'#8bb6c7'); rect(610,128,25,21,'#8bb6c7');
+            rect(520,104,145,9,'#e06d53');
+            outlineRect(685,137,56,39,'#d7dfd7','#52645b',2); rect(694,146,14,12,'#91b9c3'); rect(716,146,14,12,'#91b9c3');
+            // Storage tanks
+            outlineRect(410,144,40,33,'#e9eee8','#52645b',2); rect(410,140,40,6,'#a8b9b1');
+            outlineRect(458,150,34,27,'#e9eee8','#52645b',2); rect(458,146,34,6,'#a8b9b1');
+            // Tiny derrick
+            line(790,70,770,178,'#52645b',4); line(790,70,812,178,'#52645b',4); line(780,128,802,128,'#52645b',3); line(776,151,807,151,'#52645b',3); line(770,178,812,178,'#52645b',4);
+            rect(762,176,58,7,'#52645b');
+            // Field sign
+            outlineRect(27,130,112,41,'#fdf8f2','#2b2320',2); rect(27,130,112,8,'#1d63b8');
+            ctx.fillStyle='#2b2320'; ctx.font="bold 10px 'Press Start 2P', monospace"; ctx.fillText('PHM FIELD',36,154); ctx.font="8px 'Press Start 2P', monospace"; ctx.fillText('BALIKPAPAN',39,165);
+            // Ground plane and motion markings
+            rect(0,groundY,W,H-groundY,'#4c5960'); rect(0,groundY,W,7,'#e9ecef'); rect(0,groundY+7,W,4,'#2b2320');
+            for(let x=-(groundShift%92); x<W; x+=92) { rect(x,groundY+31,48,4,'#f4d982'); }
+            // Small gravel pixels
+            for(let i=0;i<22;i++){ const x=(i*47 + (groundShift*.35)%W)%W; rect(x,groundY+13+(i%3)*13,4,2,'#78858a'); }
+        }
+
+        function drawEngineer(x,y,frame=0,jumping=false) {
+            // Shadow
+            ctx.fillStyle='rgba(43,35,32,.24)'; ctx.beginPath(); ctx.ellipse(x+19,groundY+1,21,4,0,0,Math.PI*2); ctx.fill();
+            const legA = (!jumping && frame%2===0)?2:0, legB = (!jumping && frame%2===1)?2:0;
+            // Boots
+            rect(x+5, y+48+legA,12,6,'#2b2320'); rect(x+23,y+48+legB,12,6,'#2b2320');
+            // Legs and orange coverall
+            outlineRect(x+7,y+37+legA,11,13,'#f97316','#2b2320',2); outlineRect(x+22,y+37+legB,11,13,'#f97316','#2b2320',2);
+            rect(x+7,y+43+legA,11,3,'#f6d365'); rect(x+22,y+43+legB,11,3,'#f6d365');
+            // Torso
+            outlineRect(x+5,y+22,29,22,'#f97316','#2b2320',2); rect(x+7,y+29,25,4,'#f6d365'); rect(x+18,y+23,2,19,'#b94f28');
+            // Clipboard on left arm
+            outlineRect(x-1,y+29,8,14,'#fffaf2','#2b2320',1); rect(x+1,y+33,4,2,'#1d63b8'); rect(x+1,y+37,4,2,'#52b788');
+            // Head and hair
+            outlineRect(x+9,y+7,22,19,'#fcd5ce','#2b2320',2); rect(x+8,y+7,24,6,'#2b2320'); rect(x+8,y+11,5,6,'#2b2320'); rect(x+27,y+11,5,5,'#2b2320');
+            // eyes blink occasionally
+            if (blink > 0.08) { rect(x+14,y+16,3,3,'#2b2320'); rect(x+24,y+16,3,3,'#2b2320'); } else { rect(x+14,y+17,3,1,'#2b2320'); rect(x+24,y+17,3,1,'#2b2320'); }
+            rect(x+18,y+21,5,1,'#a45e54');
+            // Hard hat
+            outlineRect(x+7,y+3,26,7,'#fffdf7','#2b2320',2); rect(x+15,y+1,10,3,'#e4e8ec'); rect(x+16,y+5,3,3,'#1d63b8'); rect(x+19,y+5,3,3,'#52b788'); rect(x+22,y+5,3,3,'#e63946');
+            // waving arm alternate on run
+            if(!jumping && frame%2===0){ rect(x+33,y+27,5,12,'#f97316'); rect(x+35,y+24,5,5,'#fcd5ce'); }
+            else { rect(x+33,y+30,5,10,'#f97316'); rect(x+34,y+38,5,4,'#fcd5ce'); }
+        }
+
+        function makeObstacle() {
+            const pick = Math.floor(Math.random()*4);
+            const types = [
+                {type:'tubing',w:49,h:42},
+                {type:'bit',w:42,h:48},
+                {type:'bop',w:48,h:56},
+                {type:'coil',w:52,h:43}
+            ];
+            const item = {...types[pick], x:W+30};
+            item.y = groundY-item.h;
+            return item;
+        }
+
+        function drawObstacle(o) {
+            const x=Math.round(o.x), y=o.y;
+            ctx.fillStyle='rgba(43,35,32,.18)'; ctx.beginPath(); ctx.ellipse(x+o.w/2,groundY+1,o.w*.48,4,0,0,Math.PI*2); ctx.fill();
+            if(o.type==='tubing') {
+                // Bundled production tubing: stacked steel pipes
+                for(let i=0;i<3;i++) { const yy=y+8+i*11; outlineRect(x+2,yy,o.w-4,9,'#9eabb0','#2b2320',2); rect(x+7,yy+2,o.w-14,2,'#eaf0ed'); rect(x+o.w-10,yy+2,5,5,'#66777d'); }
+                rect(x+4,y+2,o.w-8,4,'#52636a');
+            } else if(o.type==='bit') {
+                // PDC drill bit with cutters
+                outlineRect(x+12,y+3,19,20,'#aeb9bb','#2b2320',2); rect(x+15,y+7,13,3,'#f6d365');
+                ctx.fillStyle='#65777d'; ctx.strokeStyle='#2b2320'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(x+8,y+23); ctx.lineTo(x+35,y+23); ctx.lineTo(x+31,y+39); ctx.lineTo(x+12,y+39); ctx.closePath(); ctx.fill(); ctx.stroke();
+                for(let i=0;i<4;i++){ rect(x+9+i*8,y+37,5,7,'#e7ece8'); rect(x+10+i*8,y+39,3,3,'#2b2320'); }
+            } else if(o.type==='bop') {
+                // Blowout preventer stack
+                outlineRect(x+10,y+4,29,43,'#d96b52','#2b2320',2); rect(x+4,y+13,41,10,'#52636a'); rect(x+1,y+16,9,5,'#f6d365'); rect(x+40,y+16,8,5,'#f6d365');
+                rect(x+14,y+28,21,7,'#f6d365'); rect(x+17,y+36,15,8,'#8c4e40'); rect(x+8,y+46,33,8,'#66777d');
+                rect(x+20,y,9,6,'#9eabb0');
+            } else {
+                // Coiled tubing reel
+                outlineRect(x+5,y+7,42,32,'#e9e0cf','#2b2320',2); ctx.strokeStyle='#1d63b8'; ctx.lineWidth=4;
+                for(let r=0;r<3;r++){ ctx.beginPath(); ctx.ellipse(x+26,y+22,15-r*4,11-r*3,0,0,Math.PI*2); ctx.stroke(); }
+                rect(x+21,y+17,10,10,'#52636a'); rect(x+22,y+18,8,8,'#f6d365');
+                rect(x+10,y+39,7,4,'#2b2320'); rect(x+37,y+39,7,4,'#2b2320');
+            }
+        }
+
+        function draw() {
+            ctx.setTransform(dpr,0,0,dpr,0,0);
+            drawBackground();
+            obstacles.forEach(drawObstacle);
+            drawEngineer(player.x,player.y,player.runFrame, !player.onGround);
+            particles.forEach(p=>rect(p.x,p.y,3,3,'#f6d365'));
+            // In-game labels / instruction badge
+            ctx.fillStyle='rgba(253,248,242,.88)'; ctx.fillRect(690,12,190,25);
+            ctx.strokeStyle='#2b2320'; ctx.lineWidth=2; ctx.strokeRect(690,12,190,25);
+            ctx.fillStyle='#2b2320'; ctx.font="9px 'Press Start 2P', monospace"; ctx.fillText(state==='running'?'FIELD SHIFT: ACTIVE':'PHM FIELD RUN',700,29);
+        }
+
+        function updateHud() {
+            scoreEl.textContent=String(Math.floor(score)).padStart(5,'0');
+            bestEl.textContent=String(best).padStart(5,'0');
+        }
+
+        function startGame() {
+            if(state==='running') return;
+            state='running'; score=0; speed=6.1; elapsed=0; spawnIn=58; obstacles=[]; particles=[]; groundShift=0;
+            player.y=groundY-player.h; player.vy=0; player.onGround=true; player.runFrame=0;
+            overlay.classList.add('hidden'); updateHud(); lastTime=performance.now();
+            if (soundEnabled) startMusic(); else stopMusic();
+            cancelAnimationFrame(raf); raf=requestAnimationFrame(loop);
+        }
+
+        function jump() {
+            const now=performance.now();
+            if(state!=='running') { startGame(); return; }
+            if(player.onGround && now-lastJumpAt>120) {
+                player.vy=-14.2; player.onGround=false; lastJumpAt=now;
+                playJumpSfx();
+                for(let i=0;i<5;i++) particles.push({x:player.x+12+Math.random()*18,y:groundY-2,vx:-Math.random()*2,vy:-Math.random()*2,life:20});
+            }
+        }
+
+        function gameOver() {
+            state='over';
+            stopMusic();
+            playGameOverSfx();
+            best=Math.max(best,Math.floor(score));
+            try { localStorage.setItem('aldianPhmFieldRunBest',String(best)); } catch(e) {}
+            updateHud();
+            overlayTitle.textContent='Shift Complete!';
+            overlayCopy.textContent=`Aldian berhasil mengumpulkan ${Math.floor(score)} points. Mau coba lagi dan pecahkan rekor?`;
+            startBtn.textContent='↻ PLAY AGAIN';
+            overlay.classList.remove('hidden');
+        }
+
+        function loop(now) {
+            if(state!=='running') return;
+            const dt=Math.min(2,(now-lastTime)/16.6667 || 1); lastTime=now; elapsed+=dt;
+            speed=Math.min(11.5,6.1+elapsed*.0022);
+            score+=dt*(speed*.11);
+            groundShift+=speed*dt;
+            player.vy+=.72*dt; player.y+=player.vy*dt;
+            if(player.y>=groundY-player.h){player.y=groundY-player.h;player.vy=0;player.onGround=true;}
+            player.runFrame=Math.floor(elapsed/6);
+            blink=(Math.sin(elapsed*.09)+1)/2;
+            spawnIn-=dt;
+            if(spawnIn<=0){obstacles.push(makeObstacle());spawnIn=(62+Math.random()*48)*(6.1/speed);}
+            obstacles.forEach(o=>{
+                o.x-=speed*dt;
+                if (!o.passed && o.x+o.w<player.x) { o.passed=true; playPassSfx(); }
+            });
+            obstacles=obstacles.filter(o=>o.x+o.w>-10);
+            // Forgiving hitbox avoids unfair edge collisions
+            const px=player.x+8, py=player.y+6, pw=player.w-14, ph=player.h-10;
+            for(const o of obstacles){
+                const ox=o.x+5, oy=o.y+5, ow=o.w-10, oh=o.h-7;
+                if(px<ox+ow && px+pw>ox && py<oy+oh && py+ph>oy){gameOver();draw();return;}
+            }
+            particles.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.12*dt;p.life-=dt;});
+            particles=particles.filter(p=>p.life>0);
+            updateHud(); draw();
+            raf=requestAnimationFrame(loop);
+        }
+
+        function handleKey(e) {
+            if(e.code==='Space'||e.code==='ArrowUp'||e.code==='KeyW') {
+                e.preventDefault();
+                if(state==='ready') {startBtn.textContent='↻ RESTART'; startGame(); jump();}
+                else if(state==='over') {startBtn.textContent='↻ RESTART'; startGame(); jump();}
+                else jump();
+            }
+        }
+        window.addEventListener('keydown',handleKey,{passive:false});
+        startBtn.addEventListener('click',()=>{startBtn.textContent='↻ RESTART';startGame();});
+        if (soundBtn) {
+            soundBtn.addEventListener('click', () => {
+                soundEnabled = !soundEnabled;
+                updateSoundButton();
+                if (!soundEnabled) stopMusic();
+                else if (state === 'running') startMusic();
+            });
+            updateSoundButton();
+        }
+        jumpBtn.addEventListener('pointerdown',e=>{e.preventDefault();jump();});
+        canvas.addEventListener('pointerdown',e=>{if(state!=='running') {startGame();} else jump();});
+        window.addEventListener('blur',()=>{if(state==='running'){state='paused';cancelAnimationFrame(raf);stopMusic();overlayTitle.textContent='Paused';overlayCopy.textContent='Tekan START untuk melanjutkan dari awal.';startBtn.textContent='▶ START AGAIN';overlay.classList.remove('hidden');}});
+        document.addEventListener('visibilitychange',()=>{if(document.hidden) stopMusic();});
+        window.addEventListener('pagehide',stopMusic);
+        window.addEventListener('resize',resizeCanvas);
+        resizeCanvas(); draw();
+    })();
+    </script>
+
+</body>
+</html>
