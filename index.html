@@ -281,8 +281,8 @@
                     <span class="font-extrabold text-ink text-[11px] sm:text-xs">ALDIAN'S ENGINEERING JOURNEY • BALIKPAPAN</span>
                 </div>
                 <div class="flex items-center gap-1.5 sm:gap-2 font-pixel text-[8px] sm:text-[9px]">
-                    <span id="hp-badge" class="bg-phmGreen/25 border-2 border-ink px-2.5 py-1 rounded-full text-ink">HSE 100%</span>
-                    <span class="bg-softYellow border-2 border-ink px-2.5 py-1 rounded-full text-ink">CUM LAUDE 3.63</span>
+                    <span id="hp-badge" class="bg-phmGreen/25 border-2 border-ink px-2.5 py-1 rounded-full text-ink">Zero LTI!</span>
+                    <span class="bg-softYellow border-2 border-ink px-2.5 py-1 rounded-full text-ink">100% Cost Recovery</span>
                 </div>
             </div>
 
@@ -399,9 +399,9 @@
                         <text x="600" y="181" text-anchor="middle" fill="#1d63b8" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="12">H</text>
                         <text x="600" y="195" text-anchor="middle" fill="#52b788" stroke="none" font-family="Plus Jakarta Sans" font-weight="900" font-size="12">M</text>
                         <line x1="586" y1="203" x2="614" y2="203" stroke="#2b2320" stroke-width="1.5"/>
-                        <text x="600" y="218" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="9">HUB</text>
-                        <text x="600" y="231" text-anchor="middle" fill="#f97316" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5">BPN</text>
-                        <text x="600" y="243" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5">ID</text>
+                        <text x="600" y="218" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="9">B</text>
+                        <text x="600" y="231" text-anchor="middle" fill="#f97316" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5">B</text>
+                        <text x="600" y="243" text-anchor="middle" fill="#2b2320" stroke="none" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5">O</text>
 
                         <!-- Main Horizontal Fascia Banner: PERTAMINA HULU MAHAKAM -->
                         <rect x="208" y="220" width="344" height="28" rx="5" fill="#fdf8f2"/>
@@ -682,7 +682,7 @@
                         </li>
                         <li class="flex items-center justify-between gap-2">
                             <span class="text-ink/65">Fokus Utama</span>
-                            <span class="font-bold bg-softYellow/60 px-2.5 py-0.5 rounded-full border border-ink">PPP, COR & SKK Migas</span>
+                            <span class="font-bold bg-softYellow/60 px-2.5 py-0.5 rounded-full border border-ink">PPP, COR & Coord.</span>
                         </li>
                         <li class="flex items-center justify-between gap-2">
                             <span class="text-ink/65">WhatsApp</span>
@@ -1164,8 +1164,8 @@
         <div class="field-run-shell">
             <div class="field-run-top px-4 py-3 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                    <div class="font-pixel text-[9px] sm:text-[10px] text-[#f6d365]">BONUS EXPERIENCE • 30% PLAY / 70% PROFESSIONAL</div>
-                    <h2 class="font-extrabold text-base sm:text-lg mt-1">ALDIAN'S PHM FIELD RUN</h2>
+                    <div class="font-pixel text-[9px] sm:text-[10px] text-[#f6d365]">BONUS EXPERIENCE</div>
+                    <h2 class="font-extrabold text-base sm:text-lg mt-1">ENGINEER PHM FIELD RUN</h2>
                 </div>
                 <div class="flex items-center gap-3 sm:gap-5">
                     <div class="text-right"><div class="text-[9px] font-bold tracking-widest text-white/65">LEVEL</div><div id="field-level" class="field-run-hud-value text-[#9be0c1]">01 / 04</div></div>
@@ -1223,7 +1223,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4">
                     <span class="inline-block bg-terracotta text-white font-pixel text-[9px] px-3 py-1.5 rounded-full border-2 border-ink">
-                        PC방 MESSAGE BOARD
+                        PC - MESSAGE BOARD
                     </span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-ink leading-tight">
                         Mari Terhubung & Berkolaborasi!
@@ -1284,7 +1284,7 @@
     <footer class="border-t-2 border-ink bg-cream py-6 px-4 text-center">
         <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-semibold text-ink/75">
             <p>© 2026 <strong>ALDIAN</strong> • Personal Professional Portfolio</p>
-            <p class="font-pixel text-[9px] text-phmOrange">PERSONAL PORTFOLIO • NOT AN OFFICIAL PHM WEBSITE</p>
+            <p class="font-pixel text-[9px] text-phmOrange">PERSONAL PORTFOLIO • DIBUAT DENGAN PIXEL & KOPI</p>
         </div>
     </footer>
 
@@ -1475,16 +1475,38 @@
             playAchievementSfx();
         }
         function updateStage() {
-            const next = getStageIndex(score);
-            if (next > levelIndex) {
-                levelIndex = next;
-                const badge = ['','level2','level3','level4'][levelIndex];
-                if (badge) unlockAchievement(badge, `LEVEL ${levelIndex + 1}: ${stages[levelIndex].name}`);
-                else { achievementToast = stages[levelIndex].name; achievementToastUntil = performance.now() + 1800; }
-            }
-            if (score >= 1600) unlockAchievement('fieldLegend', 'MAHAKAM LEGEND UNLOCKED!');
-            if (levelEl) levelEl.textContent = `${String(levelIndex + 1).padStart(2,'0')} / 04`;
+    const currentScore = Math.floor(score);
+    const next = getStageIndex(currentScore);
+
+    if (next > levelIndex) {
+        levelIndex = next;
+
+        const badge = ['', 'level2', 'level3', 'level4'][levelIndex];
+
+        if (badge) {
+            unlockAchievement(
+                badge,
+                `LEVEL ${levelIndex + 1}: ${stages[levelIndex].name}`
+            );
+        } else {
+            achievementToast = stages[levelIndex].name;
+            achievementToastUntil = performance.now() + 1800;
         }
+    }
+
+    // MAHAKAM LEGEND: unlock at 1,600 points
+    if (currentScore >= 1600) {
+        unlockAchievement(
+            'fieldLegend',
+            'MAHAKAM LEGEND UNLOCKED!'
+        );
+    }
+
+    if (levelEl) {
+        levelEl.textContent =
+            `${String(levelIndex + 1).padStart(2,'0')} / 04`;
+    }
+}
         function pauseGame() {
             if (state !== 'running') return;
             state = 'paused';
@@ -1633,6 +1655,21 @@
             soundBtn.classList.toggle('bg-white', !soundEnabled);
         }
         try { best = Number(localStorage.getItem('aldianPhmFieldRunBest') || 0); } catch(e) { best = 0; }
+        // MAHAKAM LEGEND RECOVERY
+// Automatically unlock if previous best score reached 1,600.
+
+if (best >= 1600) {
+    unlockedAchievements.add('fieldLegend');
+
+    try {
+        localStorage.setItem(
+            'aldianPhmFieldRunAchievements',
+            JSON.stringify([...unlockedAchievements])
+        );
+    } catch(e) {
+        console.warn('Achievement storage unavailable');
+    }
+}
         bestEl.textContent = String(best).padStart(5, '0');
         renderAchievements();
         if (levelEl) levelEl.textContent = '01 / 04';
@@ -1703,7 +1740,7 @@
             // Field/location sign changes with stage.
             const signTitles = ['HANDIL WELLSITE','DRILLING RIG','OFFSHORE OPS','MAHAKAM NIGHT'];
             outlineRect(27,130,154,43,'#fdf8f2','#2b2320',2); rect(27,130,154,8,levelIndex===3?'#f6d365':'#1d63b8');
-            ctx.fillStyle='#2b2320'; ctx.font="bold 9px 'Press Start 2P', monospace"; ctx.fillText(signTitles[levelIndex],35,154); ctx.font="7px 'Press Start 2P', monospace"; ctx.fillText('ALDIAN FIELD RUN',39,166);
+            ctx.fillStyle='#2b2320'; ctx.font="bold 9px 'Press Start 2P', monospace"; ctx.fillText(signTitles[levelIndex],35,154); ctx.font="7px 'Press Start 2P', monospace"; ctx.fillText('ENGINEER FIELD RUN',39,166);
             // Ground plane and motion markings.
             rect(0,groundY,W,H-groundY,'#4c5960'); rect(0,groundY,W,7,'#e9ecef'); rect(0,groundY+7,W,4,'#2b2320');
             for(let x=-(groundShift%92); x<W; x+=92) rect(x,groundY+31,48,4,'#f4d982');
@@ -1832,6 +1869,13 @@
             playGameOverSfx();
             best=Math.max(best,Math.floor(score));
             try { localStorage.setItem('aldianPhmFieldRunBest',String(best)); } catch(e) {}
+            // Final achievement verification
+if (best >= 1600) {
+    unlockAchievement(
+        'fieldLegend',
+        'MAHAKAM LEGEND UNLOCKED!'
+    );
+}
             updateHud();
             overlayTitle.textContent='Mission Over';
             overlayCopy.textContent=`Aldian mengumpulkan ${Math.floor(score)} poin dan melewati ${passedCount} rintangan. Coba lagi untuk membuka badge berikutnya!`;
