@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5e8d6">
+<meta name="description" content="Integrity Defender — action platformer edukasi integritas untuk dunia minyak dan gas, bagian dari ALDIAN.ID Arcade.">
+<title>Integrity Defender: Action RPG | ALDIAN.ID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-icon">A</span><span><b>ALDIAN.ID</b><small>ARCADE DIVISION</small></span></a>
+    <div class="top-actions"><span class="build-tag">ACTION RPG // V2</span><a href="../index.html" class="back-link">← PORTFOLIO</a></div>
+  </header>
+
+  <main class="main-wrap">
+    <section class="intro-row">
+      <div><p class="eyebrow">PIXEL ACTION PLATFORMER • OIL &amp; GAS ETHICS</p><h1>INTEGRITY <span>DEFENDER</span></h1><p class="intro-copy">Bergerak, melompat, bertahan, dan lawan penyimpangan. Kumpulkan evidence, gunakan Integrity Pulse, dan hadapi Corruption King.</p></div>
+      <div class="hero-card"><div class="portrait"><div class="portrait-helmet"></div><div class="portrait-face"><i></i><b></b></div><div class="portrait-body"></div></div><div><small>PLAYER CHARACTER</small><b>ALDIAN</b><span>INTEGRITY AGENT</span></div></div>
+    </section>
+
+    <section class="game-frame" aria-label="Integrity Defender action game">
+      <div class="hud">
+        <div class="hud-left"><span class="hud-title">FIELD OPS</span><span id="stageName">VENDOR DISTRICT</span></div>
+        <div class="hud-meters">
+          <div class="hud-stat"><small>HP</small><div class="meter hp"><i id="hpFill"></i></div><b id="hpText">100</b></div>
+          <div class="hud-stat"><small>SHIELD</small><div class="meter shield"><i id="shieldFill"></i></div><b id="shieldText">100</b></div>
+          <div class="hud-stat"><small>EVIDENCE</small><b id="evidenceText">00</b></div>
+        </div>
+        <div class="hud-right"><span id="scoreText">SCORE 0000</span><button id="pauseBtn" class="hud-btn" type="button" aria-label="Pause game">Ⅱ</button><button id="soundBtn" class="hud-btn" type="button" aria-label="Toggle sound">♫ ON</button></div>
+      </div>
+      <div class="canvas-wrap" id="canvasWrap">
+        <canvas id="gameCanvas" width="960" height="540" aria-label="Game canvas. Gunakan A dan D untuk bergerak, Space untuk melompat, J untuk menembakkan Integrity Pulse, K untuk perisai."></canvas>
+        <div class="overlay show" id="startOverlay">
+          <div class="overlay-card start-card"><p class="eyebrow">MISSION BRIEF // 001</p><h2>DEFEND YOUR<br><span>INTEGRITY.</span></h2><p>Jelajahi tiga area operasi, kalahkan para manipulator, kumpulkan evidence, lalu hadapi Corruption King.</p><div class="control-summary"><span>← → / A D <small>MOVE</small></span><span>SPACE / ↑ <small>JUMP</small></span><span>J <small>INTEGRITY PULSE</small></span><span>K <small>SHIELD</small></span></div><button class="big-btn" id="startBtn" type="button">▶ START MISSION</button><small class="disclaimer">FIKSI EDUKATIF • BUKAN DOKUMEN ATAU KEBIJAKAN INTERNAL</small></div>
+        </div>
+        <div class="overlay" id="pauseOverlay"><div class="overlay-card compact-card"><p class="eyebrow">MISSION PAUSED</p><h2>TAKE A BREATH.</h2><p>Operasi ditahan sementara.</p><button class="big-btn" id="resumeBtn" type="button">▶ RESUME</button><button class="text-btn" id="restartBtn" type="button">RESTART MISSION</button></div></div>
+        <div class="overlay" id="stageOverlay"><div class="overlay-card compact-card"><p class="eyebrow">AREA SECURED</p><h2 id="stageClearTitle">VENDOR DISTRICT CLEARED</h2><p id="stageClearCopy">Evidence secured. Move to the next operation zone.</p><button class="big-btn" id="nextStageBtn" type="button">NEXT AREA →</button></div></div>
+        <div class="overlay" id="resultOverlay"><div class="overlay-card compact-card result-card"><p class="eyebrow" id="resultEyebrow">MISSION REPORT</p><h2 id="resultTitle">INTEGRITY DEFENDER</h2><p id="resultCopy">Operation completed.</p><div class="result-grid"><div><small>SCORE</small><b id="resultScore">0000</b></div><div><small>EVIDENCE</small><b id="resultEvidence">00</b></div><div><small>RECORD</small><b id="resultBest">0000</b></div></div><div class="result-badge" id="resultBadge">🏆 INTEGRITY GUARDIAN</div><button class="big-btn" id="playAgainBtn" type="button">↻ PLAY AGAIN</button><a class="text-btn" href="training/">OPEN TRAINING MODE →</a></div></div>
+        <div class="overlay" id="debriefOverlay"><div class="overlay-card debrief-card"><p class="eyebrow">FIELD DEBRIEF</p><h2 id="debriefTitle">THREAT NEUTRALIZED</h2><p id="debriefCopy">A short educational note appears here.</p><div class="debrief-rule"><b>INTEGRITY PRINCIPLE</b><span id="debriefRule">Transparency and accountability protect the process.</span></div><button class="big-btn" id="debriefContinueBtn" type="button">CONTINUE →</button></div></div>
+      </div>
+      <div class="game-bottom"><div class="bottom-hint"><span class="live-dot"></span><span id="statusText">READY FOR DEPLOYMENT</span></div><div class="bottom-hint">AREA <b id="areaText">01 / 04</b> <span class="sep">•</span> THREATS <b id="threatText">0</b></div></div>
+      <div class="mobile-controls" id="mobileControls" aria-label="Touch game controls">
+        <div class="move-controls"><button data-hold="left" aria-label="Move left">◀</button><button data-hold="right" aria-label="Move right">▶</button></div>
+        <div class="action-controls"><button data-action="shield" class="shield-control">SHIELD</button><button data-action="attack" class="attack-control">PULSE</button><button data-action="jump" class="jump-control">JUMP</button></div>
+      </div>
+    </section>
+
+    <section class="below-grid">
+      <article class="info-card controls-card"><p class="eyebrow">HOW TO PLAY</p><h2>FIELD CONTROLS</h2><div class="control-list"><div><kbd>A</kbd><kbd>D</kbd><span>Bergerak kiri / kanan</span></div><div><kbd>SPACE</kbd><kbd>↑</kbd><span>Melompat</span></div><div><kbd>J</kbd><span>Integrity Pulse — serang musuh</span></div><div><kbd>K</kbd><span>Integrity Shield — tahan serangan</span></div><div><kbd>ESC</kbd><span>Pause / resume</span></div></div><p class="small-note">Di ponsel, gunakan tombol di bawah arena. Pulse mengonsumsi energy; kumpulkan evidence untuk memulihkan persediaan.</p></article>
+      <article class="info-card progress-card"><p class="eyebrow">PLAYER RECORD</p><h2>DEFENDER PROFILE</h2><div class="record-row"><span>BEST SCORE</span><b id="bestScore">0000</b></div><div class="record-row"><span>AREAS CLEARED</span><b id="areasCleared">0 / 4</b></div><div class="record-row"><span>BOSS DEFEATED</span><b id="bossRecord">NO</b></div><div class="achievements"><div class="achievement locked" data-ach="first-evidence"><span>◆</span><small>FIRST<br>EVIDENCE</small></div><div class="achievement locked" data-ach="vendor-neutralized"><span>✦</span><small>VENDOR<br>NEUTRALIZED</small></div><div class="achievement locked" data-ach="bribery-stopped"><span>▣</span><small>BRIBERY<br>STOPPED</small></div><div class="achievement locked" data-ach="data-protected"><span>▤</span><small>DATA<br>PROTECTED</small></div><div class="achievement locked" data-ach="king-defeated"><span>♛</span><small>KING<br>DEFEATED</small></div></div><a class="training-link" href="training/">▶ OPEN TRAINING MODE — CASE STUDIES &amp; DECISIONS</a></article>
+    </section>
+    <footer><span>ALDIAN.ID ARCADE DIVISION</span><span>PIXELS WITH PURPOSE <b>♥</b></span><a href="../index.html">BACK TO PORTFOLIO ↑</a></footer>
+  </main>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
