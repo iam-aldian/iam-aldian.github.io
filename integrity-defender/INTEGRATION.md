@@ -1,10 +1,32 @@
-# Integrasi V2 ke repository yang sudah memakai homepage V6.2
+# Integrasi Integrity Defender V2.1
 
-1. Backup repository GitHub saat ini.
-2. Download paket `ALDIAN_V6_2_WITH_INTEGRITY_DEFENDER_ACTION_V2.zip`.
-3. Extract ZIP di komputer.
-4. Upload dan replace hanya folder `integrity-defender/` di repository (seluruh isi folder, termasuk `training/`).
-5. Jangan replace homepage `index.html` jika homepage kamu sudah memiliki perubahan setelah V6.2. Paket full-site menyertakan homepage V6.2 sumber yang menjadi basis launcher.
-6. Commit/push. Link lama `integrity-defender/` tetap berlaku.
+Game sudah dipasang di repository ALDIAN.ID dan homepage utama memiliki dua tambahan kecil:
+- Link navigasi **Integrity Defender**.
+- Kartu launcher **PLAY INTEGRITY DEFENDER** setelah bagian Field Run dan sebelum Kontak.
 
-Jika homepage V6.2 kamu sudah dimodifikasi lebih lanjut, cukup upload folder game saja dari paket; homepage tidak perlu disentuh.
+Penyesuaian homepage lain tidak diganti.
+
+## Struktur
+```text
+iam-aldian.github.io/
+├── index.html
+└── integrity-defender/
+    ├── index.html
+    ├── style.css
+    ├── game.js
+    ├── assets/
+    │   ├── aldian-sprites.svg
+    │   └── corruption-king-sprites.svg
+    └── training/
+        ├── index.html
+        ├── style.css
+        └── game.js
+```
+
+## URL
+- Homepage: https://iam-aldian.github.io/
+- Action RPG: https://iam-aldian.github.io/integrity-defender/
+- Training Mode: https://iam-aldian.github.io/integrity-defender/training/
+
+## Update berikutnya
+Untuk pembaruan game saja, replace folder `integrity-defender/`. Jangan replace homepage `index.html` kecuali memang ada perubahan homepage yang disepakati.
