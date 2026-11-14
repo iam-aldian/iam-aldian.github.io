@@ -181,7 +181,34 @@ hots.push({x:e.x+(dir<0?0:e.w),y:e.y+27,vx:dir*(e.type==='data'?320:260),vy:e.ty
   $('startBtn').addEventListener('click',startGame);$('resumeBtn').addEventListener('click',()=>{state='playing';hideOverlays();lastTime=performance.now();startMusic();});$('pauseBtn').addEventListener('click',()=>{if(state==='playing'){state='paused';stopMusic();showOverlay('pauseOverlay');}else if(state==='paused'){$('resumeBtn').click();}});$('soundBtn').addEventListener('click',toggleSound);$('restartBtn').addEventListener('click',startGame);$('nextStageBtn').addEventListener('click',moveToNext);$('debriefContinueBtn').addEventListener('click',afterDebrief);$('playAgainBtn').addEventListener('click',startGame);
   document.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['arrowleft','arrowright','arrowup',' ','a','d','j','k','escape'].includes(k))e.preventDefault();if(k==='escape'){if(state==='playing'){$('pauseBtn').click();}else if(state==='paused')$('resumeBtn').click();return;}if(k==='arrowleft'||k==='a')keys.left=true;if(k==='arrowright'||k==='d')keys.right=true;if(k===' '||k==='arrowup'||k==='w')jump();if(k==='j'||k==='x')firePulse();if(k==='k'||k==='c')useShield();});
   document.addEventListener('keyup',e=>{const k=e.key.toLowerCase();if(k==='arrowleft'||k==='a')keys.left=false;if(k==='arrowright'||k==='d')keys.right=false;});
-  document.querySelectorAll('[data-hold]').forEach(btn=>{const key=btn.dataset.hold;const on=e=>{e.preventDefault();keys[key]=true;btn.classList.add('pressed');};const off=e=>{e.preventDefault();keys[key]=false;btn.classList.remove('pressed');};btn.addEventListener('pointerdown',on);['pointerup','pointercancel','pointerleave'].forEach(ev=>btn.addEventListener(ev,off));});
+  // Touch controls: pointer capture keeps movement active until the finger is lifted.
+  const holdPointers=new Map();
+  document.querySelectorAll('[data-hold]').forEach(btn=>{
+    const key=btn.dataset.hold;
+    const release=(e)=>{
+      const active=holdPointers.get(key);
+      if(active) {
+        active.delete(e.pointerId);
+        if(active.size===0) {
+          holdPointers.delete(key);
+          keys[key]=false;
+          document.querySelectorAll('[data-hold="'+key+'"]').forEach(el=>el.classList.remove('pressed'));
+        }
+      }
+      try { if(btn.hasPointerCapture && btn.hasPointerCapture(e.pointerId)) btn.releasePointerCapture(e.pointerId); } catch(err) {}
+    };
+    btn.addEventListener('pointerdown',e=>{
+      if(e.cancelable)e.preventDefault();
+      try { if(btn.setPointerCapture) btn.setPointerCapture(e.pointerId); } catch(err) {}
+      if(!holdPointers.has(key))holdPointers.set(key,new Set());
+      holdPointers.get(key).add(e.pointerId);
+      keys[key]=true;btn.classList.add('pressed');
+    },{passive:false});
+    btn.addEventListener('pointerup',release,{passive:false});
+    btn.addEventListener('pointercancel',release,{passive:false});
+    btn.addEventListener('lostpointercapture',release,{passive:false});
+    btn.addEventListener('contextmenu',e=>e.preventDefault());
+  });
   document.querySelectorAll('[data-action]').forEach(btn=>btn.addEventListener('pointerdown',e=>{e.preventDefault();const a=btn.dataset.action;if(a==='jump')jump();if(a==='attack')firePulse();if(a==='shield')useShield();btn.classList.add('pressed');setTimeout(()=>btn.classList.remove('pressed'),130);}));
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='playing')$('pauseBtn').click();});
   renderRecords();$('areasCleared').textContent='0 / 4';
