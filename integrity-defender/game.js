@@ -82,32 +82,162 @@
     }
   }
 
-  function update(dt){if(state!=='playing')return;dt=Math.min(dt,.035);player.anim+=dt*(Math.abs(player.vx)>5?13:5);player.attackPose=Math.max(0,player.attackPose-dt);player.hurtPose=Math.max(0,player.hurtPose-dt);comboTimer=Math.max(0,comboTimer-dt);comboFlash=Math.max(0,comboFlash-dt);bossWarning=Math.max(0,bossWarning-dt);if(comboTimer===0&&combo!==0){combo=0;updateComboHud();}else if(combo>0)updateComboHud();invuln=Math.max(0,invuln-dt);shieldTime=Math.max(0,shieldTime-dt);shieldCooldown=Math.max(0,shieldCooldown-dt);shotCooldown=Math.max(0,shotCooldown-dt);player.energy=Math.min(MAX_ENERGY,player.energy+dt*5.3);
-    const speed=310;player.vx=0;if(keys.left){player.vx=-speed;player.face=-1;}if(keys.right){player.vx=speed;player.face=1;}player.x+=player.vx*dt;player.x=Math.max(8,Math.min(worldWidth-player.w-20,player.x));player.vy+=1450    if(boss&&!boss.dead){
-      boss.animTime+=dt;boss.movePhase+=dt;boss.hit=Math.max(0,boss.hit-dt);boss.flash=Math.max(0,boss.flash-dt);
-      const oldPhase=boss.phase;boss.phase=boss.hp<=6?3:boss.hp<=13?2:1;
-      if(boss.phase>oldPhase){bossWarning=1.6;makeParticles(boss.x+boss.w/2,boss.y+35,boss.phase===3?'#ff6a62':'#f5d36d',24);tone(180,.24,'sawtooth',.045);}
+  function update(dt){
+    if(state!=='playing')return;
+    dt=Math.min(dt,.035);
+    player.anim+=dt*(Math.abs(player.vx)>5?13:5);
+    player.attackPose=Math.max(0,player.attackPose-dt);
+    player.hurtPose=Math.max(0,player.hurtPose-dt);
+    comboTimer=Math.max(0,comboTimer-dt);
+    comboFlash=Math.max(0,comboFlash-dt);
+    bossWarning=Math.max(0,bossWarning-dt);
+    if(comboTimer===0&&combo!==0){combo=0;updateComboHud();}
+    else if(combo>0)updateComboHud();
+    invuln=Math.max(0,invuln-dt);
+    shieldTime=Math.max(0,shieldTime-dt);
+    shieldCooldown=Math.max(0,shieldCooldown-dt);
+    shotCooldown=Math.max(0,shotCooldown-dt);
+    player.energy=Math.min(MAX_ENERGY,player.energy+dt*5.3);
+
+    // Player movement and gravity.
+    const speed=310;
+    player.vx=0;
+    if(keys.left){player.vx=-speed;player.face=-1;}
+    if(keys.right){player.vx=speed;player.face=1;}
+    player.x+=player.vx*dt;
+    player.x=Math.max(8,Math.min(worldWidth-player.w-20,player.x));
+    player.vy+=1450*dt;
+    player.y+=player.vy*dt;
+    if(player.y+player.h>=FLOOR){player.y=FLOOR-player.h;player.vy=0;player.onGround=true;}
+    else player.onGround=false;
+
+    // Keep the player from walking through field obstacles.
+    obstacles.forEach(o=>{
+      if(o.dead)return;
+      const top=FLOOR-o.h;
+      if(player.x<o.x+o.w&&player.x+player.w>o.x&&player.y+player.h>top&&player.y< FLOOR){
+        if(player.vx>0)player.x=o.x-player.w;
+        else if(player.vx<0)player.x=o.x+o.w;
+      }
+    });
+
+    // Regular enemies pursue at close range and launch projectiles.
+    enemies.forEach(e=>{
+      if(e.dead)return;
+      e.phase+=dt*4;
+      e.hit=Math.max(0,e.hit-dt);
+      const dx=player.x-e.x;
+      const dir=dx<0?-1:1;
+      e.dir=dir;
+      e.cool-=dt;
+      if(Math.abs(dx)<520&&e.cool<=0){
+        const info=enemyInfo[e.type];
+        enemyShots.push({
+          x:e.x+(dir<0?0:e.w),y:e.y+27,
+          vx:dir*(e.type==='data'?320:260),
+          vy:e.type==='data'?(-40+Math.random()*80):0,
+          w:22,h:18,type:info.shot,life:3
+        });
+        e.cool=e.type==='vendor'?2.5:e.type==='briber'?1.9:1.55;
+      }
+      if(Math.abs(dx)<120)e.x+=Math.sign(dx)*55*dt;
+    });
+
+    // The Corruption King uses telegraphed attacks that change by phase.
+    if(boss&&!boss.dead){
+      boss.animTime+=dt;
+      boss.movePhase+=dt;
+      boss.hit=Math.max(0,boss.hit-dt);
+      boss.flash=Math.max(0,boss.flash-dt);
+      const oldPhase=boss.phase;
+      boss.phase=boss.hp<=6?3:boss.hp<=13?2:1;
+      if(boss.phase>oldPhase){
+        bossWarning=1.6;
+        makeParticles(boss.x+boss.w/2,boss.y+35,boss.phase===3?'#ff6a62':'#f5d36d',24);
+        tone(180,.24,'sawtooth',.045);
+      }
       if(boss.attackState==='idle'){
         boss.cool-=dt;
-        if(boss.cool<=0){boss.attackState='windup';boss.attackStyle=boss.phase===1?'orb':boss.phase===2?'fan':'ground-sweep';boss.attackTimer=boss.phase===1?.72:boss.phase===2?.62:.58;bossWarning=boss.attackTimer;tone(240,.1,'square',.025);}
+        if(boss.cool<=0){
+          boss.attackState='windup';
+          boss.attackStyle=boss.phase===1?'orb':boss.phase===2?'fan':'ground-sweep';
+          boss.attackTimer=boss.phase===1?.72:boss.phase===2?.62:.58;
+          bossWarning=boss.attackTimer;
+          tone(240,.1,'square',.025);
+        }
       }else if(boss.attackState==='windup'){
-        boss.attackTimer-=dt;if(boss.attackTimer<=0){boss.attackState='strike';boss.attackTimer=.22;bossAttack();}
+        boss.attackTimer-=dt;
+        if(boss.attackTimer<=0){boss.attackState='strike';boss.attackTimer=.22;bossAttack();}
       }else if(boss.attackState==='strike'){
-        boss.attackTimer-=dt;if(boss.attackTimer<=0){boss.attackState='recover';boss.attackTimer=.46;}
+        boss.attackTimer-=dt;
+        if(boss.attackTimer<=0){boss.attackState='recover';boss.attackTimer=.46;}
       }else if(boss.attackState==='recover'){
-        boss.attackTimer-=dt;if(boss.attackTimer<=0){boss.attackState='idle';boss.cool=boss.phase===1?1.65:boss.phase===2?1.28:1.02;}
+        boss.attackTimer-=dt;
+        if(boss.attackTimer<=0){boss.attackState='idle';boss.cool=boss.phase===1?1.65:boss.phase===2?1.28:1.02;}
       }
       boss.x+=Math.sin(boss.movePhase*2.2)*12*dt;
     }
-hots.push({x:e.x+(dir<0?0:e.w),y:e.y+27,vx:dir*(e.type==='data'?320:260),vy:e.type==='data'?(-40+Math.random()*80):0,w:22,h:18,type:info.shot,life:3});e.cool=e.type==='vendor'?2.5:e.type==='briber'?1.9:1.55;}if(Math.abs(dx)<120)e.x+=Math.sign(-dx)*55*dt;});
-    if(boss&&!boss.dead){boss.cool-=dt;boss.hit=Math.max(0,boss.hit-dt);boss.flash=Math.max(0,boss.flash-dt);boss.phase=boss.hp<=6?3:boss.hp<=13?2:1;if(boss.cool<=0){const dir=player.x<boss.x?-1:1;const n=boss.phase===1?1:boss.phase===2?2:3;for(let i=0;i<n;i++){enemyShots.push({x:boss.x+(dir<0?0:boss.w),y:boss.y+44+i*18,vx:dir*(boss.phase===1?290:boss.phase===2?360:390),vy:(i-(n-1)/2)*50,w:24,h:18,type:'corrupt',life:3});}boss.cool=boss.phase===1?1.7:boss.phase===2?1.1:.78;if(boss.phase===3&&Math.random()<.45){enemyShots.push({x:boss.x,y:FLOOR-23,vx:dir*240,vy:0,w:45,h:16,type:'wave',life:3});}}boss.x+=Math.sin(performance.now()/500)*18*dt;}
-    shots.forEach(s=>{s.x+=s.vx*dt;s.life-=dt;});shots=shots.filter(s=>s.life>0&&s.x>-camera-50&&s.x<camera+W+50);
-    shots.forEach(s=>{activeEnemies.forEach(e=>{if(s.life>0&&!e.dead&&hit(s,e)){s.life=0;e.hp-=s.damage||1;e.hit=.14;registerComboHit(s.x,s.y);makeParticles(s.x,s.y,'#f7d46d',4);if(e.hp<=0){e.dead=true;score+=220;addPickup(e.x+12,FLOOR-65);if(e.type==='vendor')unlock('vendor-neutralized');if(e.type==='briber')unlock('bribery-stopped');if(e.type==='data')unlock('data-protected');tone(210,.13,'triangle');}}});if(s.life>0&&boss&&!boss.dead&&hit(s,boss)){s.life=0;boss.hp-=s.damage||1;boss.hit=.14;registerComboHit(s.x,s.y);makeParticles(s.x,s.y,'#a8e6c0',5);if(boss.hp<=0){boss.dead=true;score+=1000;makeParticles(boss.x+40,boss.y+55,'#f7d46d',35);tone(880,.2,'triangle');setTimeout(()=>tone(1100,.25,'triangle'),150);}}});shots=shots.filter(s=>s.life>0);
-    enemyShots.forEach(s=>{s.x+=s.vx*dt;s.y+=(s.vy||0)*dt;s.life-=dt;if(hit(s,player)){s.life=0;if(shieldTime>0){score+=25;makeParticles(s.x,s.y,'#7ac5ee',5);tone(550,.07,'sine');}else hurt(s.type==='corrupt'?14:10,s.x);}});enemyShots=enemyShots.filter(s=>s.life>0&&s.x>-camera-70&&s.x<camera+W+70);
-    pickups.forEach(p=>{p.phase+=dt*4;if(!p.got&&hit(player,{x:p.x,y:p.y+Math.sin(p.phase)*6,w:p.w,h:p.h})){p.got=true;evidence++;score+=100;player.energy=Math.min(MAX_ENERGY,player.energy+25);unlock('first-evidence');makeParticles(p.x,p.y,'#f5d36a',10);tone(920,.08,'square');}});
-    particles.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=380*dt;p.life-=dt;});particles=particles.filter(p=>p.life>0);
-    if(stage<3&&enemies.every(e=>e.dead)&&player.x>worldWidth-150){showDebrief();return;}if(stage===3&&boss&&boss.dead){showDebrief();return;}
-    camera=Math.max(0,Math.min(worldWidth-W,player.x-W*.42));updateHud();$('areaText').textContent=`0${stage+1} / 04`;if(player.hp<=0)loseGame();
+
+    const activeEnemies=enemies.filter(e=>!e.dead);
+    shots.forEach(s=>{s.x+=s.vx*dt;s.life-=dt;});
+    shots.forEach(s=>{
+      activeEnemies.forEach(e=>{
+        if(s.life>0&&!e.dead&&hit(s,e)){
+          s.life=0;e.hp-=s.damage||1;e.hit=.14;
+          registerComboHit(s.x,s.y);
+          makeParticles(s.x,s.y,'#f7d46d',4);
+          if(e.hp<=0){
+            e.dead=true;score+=220;addPickup(e.x+12,FLOOR-65);
+            if(e.type==='vendor')unlock('vendor-neutralized');
+            if(e.type==='briber')unlock('bribery-stopped');
+            if(e.type==='data')unlock('data-protected');
+            tone(210,.13,'triangle');
+          }
+        }
+      });
+      if(s.life>0&&boss&&!boss.dead&&hit(s,boss)){
+        s.life=0;boss.hp-=s.damage||1;boss.hit=.14;
+        registerComboHit(s.x,s.y);
+        makeParticles(s.x,s.y,'#a8e6c0',5);
+        if(boss.hp<=0){
+          boss.dead=true;score+=1000;
+          makeParticles(boss.x+40,boss.y+55,'#f7d46d',35);
+          tone(880,.2,'triangle');
+          setTimeout(()=>tone(1100,.25,'triangle'),150);
+        }
+      }
+    });
+    shots=shots.filter(s=>s.life>0&&s.x>-camera-50&&s.x<camera+W+50);
+
+    enemyShots.forEach(s=>{
+      s.x+=s.vx*dt;s.y+=(s.vy||0)*dt;s.life-=dt;
+      if(hit(s,player)){
+        s.life=0;
+        if(shieldTime>0){score+=25;makeParticles(s.x,s.y,'#7ac5ee',5);tone(550,.07,'sine');}
+        else hurt(s.type==='corrupt'?14:10,s.x);
+      }
+    });
+    enemyShots=enemyShots.filter(s=>s.life>0&&s.x>-camera-70&&s.x<camera+W+70);
+
+    pickups.forEach(p=>{
+      p.phase+=dt*4;
+      if(!p.got&&hit(player,{x:p.x,y:p.y+Math.sin(p.phase)*6,w:p.w,h:p.h})){
+        p.got=true;evidence++;score+=100;
+        player.energy=Math.min(MAX_ENERGY,player.energy+25);
+        unlock('first-evidence');
+        makeParticles(p.x,p.y,'#f5d36a',10);
+        tone(920,.08,'square');
+      }
+    });
+    particles.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=380*dt;p.life-=dt;});
+    particles=particles.filter(p=>p.life>0);
+
+    if(stage<3&&enemies.every(e=>e.dead)&&player.x>worldWidth-150){showDebrief();return;}
+    if(stage===3&&boss&&boss.dead){showDebrief();return;}
+    camera=Math.max(0,Math.min(worldWidth-W,player.x-W*.42));
+    updateHud();
+    $('areaText').textContent=`0${stage+1} / 04`;
+    if(player.hp<=0)loseGame();
   }
   function hit(a,b){return a.x<(b.x+b.w)&&a.x+a.w>b.x&&a.y<(b.y+b.h)&&a.y+a.h>b.y;}
 
