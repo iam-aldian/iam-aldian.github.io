@@ -1,4 +1,4 @@
-# ALDIAN.ID Integrity Defender — Action RPG V2
+# ALDIAN.ID Integrity Defender — Action RPG V2.1.1
 
 Game aksi 2D bergaya pixel-art untuk GitHub Pages. Pemain mengendalikan Aldian dengan keyboard atau tombol sentuh, menghindari serangan, mengumpulkan evidence, menembakkan Integrity Pulse, dan memakai Integrity Shield.
 
@@ -7,6 +7,7 @@ Game aksi 2D bergaya pixel-art untuk GitHub Pages. Pemain mengendalikan Aldian d
 - `Space` / `↑` / `W`: melompat.
 - `J` / `X`: Integrity Pulse.
 - `K` / `C`: Integrity Shield.
+- Combo: 3 hit beruntun memberi damage Pulse ×2; 6 hit memberi ×3. Combo terputus jika pemain terkena serangan atau jeda hit melebihi 2,4 detik.
 - `Esc`: pause / resume.
 - Smartphone: tombol kiri/kanan, JUMP, PULSE, SHIELD di bawah arena.
 
@@ -22,19 +23,22 @@ Setiap zona yang berhasil diselesaikan menampilkan field debrief berisi konteks 
 Kuis berbasis kasus dari Integrity Defender V1 dipertahankan di `training/`. Action RPG adalah mode utama; Training Mode dapat dibuka dari kartu di bawah arena.
 
 ## Cara integrasi ke homepage ALDIAN.ID
-Homepage V6.2 yang sudah memiliki link/kartu `integrity-defender/` tidak perlu diubah. Upload/replace folder `integrity-defender/` ini di root repository, sehingga URL game tetap:
+Homepage utama ALDIAN.ID saat ini sudah memiliki navigasi dan Arcade launcher menuju `integrity-defender/`. Bagian lain homepage dipertahankan. Game ini dipublikasikan di:
 
-`https://USERNAME.github.io/NAMA-REPOSITORY/integrity-defender/`
+`https://iam-aldian.github.io/integrity-defender/`
 
 Struktur folder:
 
 ```text
 repository/
-├── index.html                 # homepage V6.2, tetap dipertahankan
+├── index.html                 # homepage pribadi (penyesuaian user dipertahankan)
 └── integrity-defender/
-    ├── index.html             # Action RPG V2
+    ├── index.html             # Action RPG V2.1
     ├── style.css
     ├── game.js
+    ├── assets/
+    │   ├── aldian-sprites.svg
+    │   └── corruption-king-sprites.svg
     ├── README.md
     └── training/
         ├── index.html         # Quiz V1 / Training Mode
