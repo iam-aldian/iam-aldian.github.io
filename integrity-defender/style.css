@@ -10,3 +10,11 @@
 
 /* Mobile touch input fix: prevent browser selection/scroll while using directional controls. */
 .mobile-controls button[data-hold],.mobile-controls button[data-action]{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+
+
+/* Direct access to the decision-based learning mode from the mission briefing. */
+.training-launch-link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:11px;padding:11px 10px;background:#f5ead9;border:2px solid var(--ink);border-radius:9px;box-shadow:0 3px 0 var(--ink);text-decoration:none;color:var(--blue);text-align:center;font:8px 'Press Start 2P';line-height:1.6;transition:transform .12s,background .12s}
+.training-launch-link small{font:600 10px/1.5 'Plus Jakarta Sans',Arial,sans-serif;color:#675d55}
+.training-launch-link:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.training-launch-link:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+@media(max-width:600px){.training-launch-link{font-size:7px;padding:9px 8px;gap:4px}.training-launch-link small{font-size:9px}}

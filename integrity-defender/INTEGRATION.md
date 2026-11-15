@@ -1,10 +1,14 @@
-# Integrasi Integrity Defender V2.1
+# Integrasi Integrity Defender V2.2.0
 
-Game sudah dipasang di repository ALDIAN.ID dan homepage utama memiliki dua tambahan kecil:
+Integrity Defender sudah terpasang di repository ALDIAN.ID sebagai dua mode:
+- **Action RPG**: platformer pixel-art dengan empat arena dan field debrief.
+- **Decision Training**: empat chapter kasus dan final boss tiga ronde, dengan Integrity Points, feedback untuk setiap pilihan, dan progres tersimpan lokal.
+
+Homepage utama sudah memiliki:
 - Link navigasi **Integrity Defender**.
 - Kartu launcher **PLAY INTEGRITY DEFENDER** setelah bagian Field Run dan sebelum Kontak.
 
-Penyesuaian homepage lain tidak diganti.
+Perubahan pada homepage utama tidak diperlukan untuk pembaruan ini. Penyesuaian homepage yang sudah ada tetap dipertahankan.
 
 ## Struktur
 ```text
@@ -17,6 +21,7 @@ iam-aldian.github.io/
     ├── assets/
     │   ├── aldian-sprites.svg
     │   └── corruption-king-sprites.svg
+    ├── README.md
     └── training/
         ├── index.html
         ├── style.css
@@ -26,7 +31,14 @@ iam-aldian.github.io/
 ## URL
 - Homepage: https://iam-aldian.github.io/
 - Action RPG: https://iam-aldian.github.io/integrity-defender/
-- Training Mode: https://iam-aldian.github.io/integrity-defender/training/
+- Decision Training: https://iam-aldian.github.io/integrity-defender/training/
 
-## Update berikutnya
-Untuk pembaruan game saja, replace folder `integrity-defender/`. Jangan replace homepage `index.html` kecuali memang ada perubahan homepage yang disepakati.
+## Cara update
+
+1. Unggah isi folder `integrity-defender/` ke path yang sama di repository.
+2. Commit ke branch `main`.
+3. Tunggu GitHub Pages selesai deploy, lalu hard refresh halaman bila browser masih memakai cache lama.
+4. Jangan replace root `index.html` saat hanya memperbarui game.
+
+## Catatan
+Semua skenario fiktif dan tidak merepresentasikan kebijakan atau kasus internal perusahaan. Tidak ada backend; penyimpanan progres memakai `localStorage` pada browser masing-masing.
