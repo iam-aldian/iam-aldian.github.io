@@ -23,7 +23,7 @@
   let keys={left:false,right:false,shield:false};
   const melody=[523,659,784,659,587,698,880,698,523,659,784,988,880,784,659,587];
   const playerSheet=new Image(); playerSheet.src='assets/aldian-sprites.svg';
-  const bossSheet=new Image(); bossSheet.src='assets/corruption-king-sprites.svg';
+  const bossSheet=new Image(); bossSheet.src='assets/corruption-king-sprites.svg?v=hood-question-king-1';
   let combo=0, comboTimer=0, comboBest=0, comboFlash=0, bossWarning=0;
 
   try { const s=JSON.parse(localStorage.getItem(STORE)||'{}'); bestScore=Number(s.bestScore||0); comboBest=Number(s.comboBest||0); achievements=new Set(Array.isArray(s.achievements)?s.achievements:[]); } catch(e){}
