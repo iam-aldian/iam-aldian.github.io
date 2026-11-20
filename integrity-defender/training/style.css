@@ -6,3 +6,21 @@
 @media(max-width:760px){.page-shell{padding:0 13px}.topbar{margin:9px 0 22px;padding:10px 11px}.status-chip{display:none}.game-heading{grid-template-columns:1fr;gap:13px}.profile-stamp{width:max-content}.pixel-scene{height:205px}.facility-mid{left:34%;width:230px}.facility-left{left:6%;transform:scale(.82);transform-origin:bottom left}.facility-right{right:4%;transform:scale(.8);transform-origin:bottom right}.hero-sprite{left:24%;transform:scale(.88);transform-origin:bottom}.villain-sprite{right:13%;transform:scale(.85);transform-origin:bottom}.game-panel{grid-template-columns:1fr;gap:20px}.mission-brief{padding:16px}.guide-grid{grid-template-columns:repeat(2,1fr)}.case-layout{grid-template-columns:1fr 1fr;gap:12px}.case-art{min-height:174px}.achievement-grid{grid-template-columns:repeat(3,1fr)}.records-panel{padding:19px}.scene-hud,.scene-footer{font-size:6px}.heading-copy{font-size:13px}}
 @media(max-width:480px){.page-shell{padding:0 10px}.topbar{border-radius:13px}.brand-mark{width:34px;height:34px;font-size:9px}.brand b{font-size:11px}.brand small{font-size:6px}.back-link{font-size:6px}.game-heading h1{font-size:23px;line-height:1.5}.eyebrow{font-size:7px}.profile-stamp{padding:8px 10px}.pixel-scene{height:176px}.scene-hud,.scene-footer{padding:9px 10px;font-size:5px}.facility-mid{left:31%;width:195px;height:125px}.facility-sign{font-size:6px}.facility-windows{height:43px}.facility-left{left:1%;transform:scale(.63)}.facility-right{right:0;transform:scale(.65)}.hero-sprite{left:21%;transform:scale(.75);transform-origin:bottom}.villain-sprite{right:8%;transform:scale(.7);transform-origin:bottom}.scene-caption{font-size:5px}.panel-copy h2{font-size:22px}.panel-copy>p:not(.eyebrow){font-size:13px}.primary-btn,.ghost-btn{font-size:7px;min-height:44px;padding:0 12px}.intro-actions .primary-btn{flex:1}.brief-row{font-size:6px}.brief-row b{font-size:6px}.brief-header{font-size:7px}.game-panel,.records-panel{padding:16px}.guide-grid{gap:8px}.guide-grid article{padding:11px}.guide-grid h3{font-size:7px}.guide-grid p{font-size:11px}.guide-bottom{align-items:flex-start;flex-direction:column}.play-topline h2{font-size:16px}.mission-category{font-size:6px;padding:7px 9px}.meters{grid-template-columns:1fr;gap:12px;margin:16px 0}.meter-label{font-size:6px}.meter-label b{font-size:6px}.case-layout{grid-template-columns:1fr}.case-art{min-height:158px}.case-text h3{font-size:16px}.choice-btn{padding:11px;min-height:58px}.choice-copy{font-size:12px}.choice-key{width:26px;height:26px;flex-basis:26px}.feedback{padding:13px}.feedback-head b,.feedback-head small,.feedback-rule b{font-size:6px}.feedback>p,.feedback-rule span{font-size:12px}.play-footer{font-size:5px}.achievement-grid{grid-template-columns:repeat(2,1fr)}.achievement{min-height:120px}.achievement b{font-size:6px}.result-stats{gap:6px}.result-stats div{padding:12px 5px}.result-stats small{font-size:5px}.result-stats b{font-size:12px}.end-panel{padding:25px 16px}.records-heading h2{font-size:9px}footer{font-size:5px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Match the ALDIAN.ID portfolio scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 #fbe8d3;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbe8d3;
+}
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border: 2px solid #2b2320;
+  border-radius: 999px;
+}
