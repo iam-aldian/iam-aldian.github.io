@@ -18,3 +18,21 @@
 .training-launch-link:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .training-launch-link:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
 @media(max-width:600px){.training-launch-link{font-size:7px;padding:9px 8px;gap:4px}.training-launch-link small{font-size:9px}}
+
+/* Match the ALDIAN.ID portfolio scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 #fbe8d3;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbe8d3;
+}
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border: 2px solid #2b2320;
+  border-radius: 999px;
+}
