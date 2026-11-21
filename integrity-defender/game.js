@@ -19,7 +19,7 @@
   };
   let state='menu', stage=0, worldWidth=WORLD, camera=0, player, enemies=[], shots=[], enemyShots=[], pickups=[], particles=[], obstacles=[], boss=null;
   let score=0, evidence=0, areasCleared=0, lastTime=0, stageDebriefShown=false, invuln=0, shieldTime=0, shieldCooldown=0, shotCooldown=0, flash=0, resultWin=false;
-  let bestScore=0, achievements=new Set(), muted=false, audioCtx=null, musicTimer=null, musicStep=0;
+  let bestScore=0, achievements=new Set(), muted=false, audioCtx=null, musicTimer=null, musicStep=0, musicMode=null;
   let keys={left:false,right:false,shield:false};
   const melody=[523,659,784,659,587,698,880,698,523,659,784,988,880,784,659,587];
   const playerSheet=new Image(); playerSheet.src='assets/aldian-sprites.svg';
@@ -35,8 +35,43 @@
 
   function audio(){ if(muted)return; try{ if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)(); if(audioCtx.state==='suspended')audioCtx.resume(); return audioCtx;}catch(e){return null;} }
   function tone(freq=440,duration=.09,type='square',volume=.035){const a=audio();if(!a)return;const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(volume,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+duration);o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+duration);}
-  function startMusic(){ if(muted||musicTimer)return; audio(); musicTimer=setInterval(()=>{if(state!=='playing'||muted)return; tone(melody[musicStep%melody.length],.12,'square',.018); if(musicStep%4===0)tone(melody[(musicStep+4)%melody.length]/2,.13,'triangle',.012);musicStep++;},155); }
-  function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null;}}
+  const bossMelody=[146.83,146.83,220,196,174.61,174.61,261.63,220,130.81,130.81,196,174.61,146.83,164.81,220,196];
+  function startMusic(){
+    if(muted)return;
+    const nextMode=stage===3?'boss':'field';
+    if(musicTimer&&musicMode===nextMode)return;
+    stopMusic();
+    if(!audio())return;
+    musicMode=nextMode;
+    musicStep=0;
+    if(musicMode==='boss'){
+      // Original final-boss theme: minor-key pulse, low ostinato and rising alarm accents.
+      musicTimer=setInterval(()=>{
+        if(state!=='playing'||muted)return;
+        const step=musicStep%bossMelody.length;
+        const note=bossMelody[step];
+        tone(note,.19,'sawtooth',.021);
+        if(step%2===0)tone(note/2,.27,'triangle',.028);
+        if(step%4===0){
+          tone(55,.16,'square',.026);
+          tone(82.41,.11,'triangle',.018);
+        }
+        if(step===7||step===15)tone(note*2,.09,'square',.012);
+        musicStep++;
+      },132);
+    }else{
+      musicTimer=setInterval(()=>{
+        if(state!=='playing'||muted)return;
+        tone(melody[musicStep%melody.length],.12,'square',.018);
+        if(musicStep%4===0)tone(melody[(musicStep+4)%melody.length]/2,.13,'triangle',.012);
+        musicStep++;
+      },155);
+    }
+  }
+  function stopMusic(){
+    if(musicTimer){clearInterval(musicTimer);musicTimer=null;}
+    musicMode=null;
+  }
   function toggleSound(){muted=!muted;$('soundBtn').textContent=muted?'♫ OFF':'♫ ON';if(muted)stopMusic();else if(state==='playing')startMusic();}
 
   function resetPlayer(){player={x:80,y:FLOOR-64,w:38,h:62,vx:0,vy:0,face:1,onGround:true,hp:MAX_HP,energy:MAX_ENERGY,anim:0,attackPose:0,hurtPose:0};invuln=0;shieldTime=0;shieldCooldown=0;shotCooldown=0;}
